@@ -1,14 +1,14 @@
-import { AppBar } from './AppBar';
+// import { AppBar } from './AppBar';
 import { MainPage } from './MainPage';
 import { Route, Routes } from 'react-router';
-import { Filter } from './Filter';
+// import { Filter } from './Filter';
 import { ProductPage } from './ProductPage';
-import { Basket } from './Basket';
+// import { Basket } from './Basket';
 import { Admin } from './admin/Admin';
 import { About } from './pages/About';
 import { Components } from './pages/Components';
 import { Usage } from './pages/Usage';
-import { Footer } from './Footer';
+// import { Footer } from './Footer';
 import { Diia } from './pages/Diia';
 import { AddNewProduct } from './admin/AddNewItem';
 import { CheckOrders } from './admin/CheckOrders';
@@ -18,10 +18,10 @@ import { SendAsObj } from './admin/SendAsObj';
 export const App = () => {
   return (
     <div className='globalWrapper'>
-      <Basket />
-      <AppBar />
+      {/* <Basket />
+      <AppBar /> */}
       <div className="main-page container">
-        <Filter />
+        {/* <Filter /> */}
         <Routes>
           <Route path="/" element={<MainPage />} />
           <Route path="products/:id" element={<ProductPage />}>
@@ -41,7 +41,7 @@ export const App = () => {
           <Route path="*" element={<MainPage />} />
         </Routes>
       </div>
-      <Footer />
+      {/* <Footer /> */}
     </div>
   );
 };
