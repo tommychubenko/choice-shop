@@ -1,0 +1,107 @@
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+    font-family: 'Sofia Sans Condensed', sans-serif;
+    font-family: 'Raleway', sans-serif;
+    border: 0 solid #e5e7eb;
+    
+
+}
+
+html, body {
+   height: 100%;
+    margin: 0;
+    padding: 0;
+}
+
+#root {
+    height: 100%;
+}
+
+.globalWrapper {
+    min-height: 100%;
+    display: flex;
+    flex-direction: column;
+}
+
+
+// transitions
+
+$standart-transition-time: 250ms;
+$standart-transition-style: cubic-bezier(0.4, 0, 0.2, 1);
+
+// Width standarts
+
+$mobile: 479.98 + px;
+$tablet: 767.98 + px;
+$pc: 1199.98 + px;
+$big-pc: 1919.98 + px;
+
+// Colors
+
+$main-color: #008000;
+$secondary-color: #000080;
+$third-color: #800000;
+$main-grey: #e5e7eb;
+$secondary-grey: grey;
+
+
+
+section {
+    margin: 0;
+    padding: 0;
+
+}
+
+h1,
+h2,
+h3,
+p,
+ul,
+li {
+    margin: 0;
+    padding: 0;
+}
+
+ul {
+    list-style: none;
+}
+
+.container {
+    padding: 0 5px;
+    margin: 0 auto;
+    min-width: 320px;
+ 
+    @media screen and (min-width: $mobile) {
+        width: 480px;
+    }
+
+    @media screen and (min-width: $tablet) {
+        width: 768px;
+    }
+
+    @media screen and (min-width: $pc) {
+        width: 1240px;
+    }
+
+    @media screen and (min-width: $big-pc) {
+        // width: 1920px;
+        width: 1240px;
+        // padding: 0 118px;
+    }
+
+}
+
+.main {
+    // padding-top: 75px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding-bottom: 100px;
+}
+
+div{
+    margin: 0;
+    padding: 0;
+}
