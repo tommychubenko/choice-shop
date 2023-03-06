@@ -1,0 +1,26 @@
+.userpage {
+    width: 100%;
+    min-height: 500px;
+    background-color: #fff;
+    border-radius: 5px;
+    padding: 20px;
+
+    &_title {
+        margin-bottom: 15px;
+    }
+
+    &_order{
+        &-list {
+            border-collapse:collapse;
+            th, td{
+                text-align: left;
+                padding: 10px;
+             
+            }
+
+           tr:nth-child(even){
+                background-color: lightgrey;
+            }
+        }
+    }
+}

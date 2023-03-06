@@ -3,6 +3,7 @@
   &_form{
   // display: none;
   margin-bottom: 50px;
+
   }
   &_array{
     // display: none;
@@ -35,6 +36,8 @@
   display: flex;
   flex-direction: column;
   gap: 20px;
+  background-color: #fff;
+padding: 15px;
   &_title {
     cursor: pointer;
     margin-bottom: 15px;
@@ -44,9 +47,27 @@
 
 .admin{
   &_orders {
+
+
     &-title {
       cursor: pointer;
     margin-bottom: 15px;
+    }
+
+    &-list {
+      background-color: #fff;
+      border-collapse: collapse;
+
+      th {
+        margin-bottom: 15px;
+      }
+
+
+      th, td {
+        text-align: left;
+      }
+
+
     }
 
     // &-list {

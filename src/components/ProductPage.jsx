@@ -6,6 +6,7 @@ import DoubleArrowIcon from '@mui/icons-material/DoubleArrow';
 
 import CheckCircleOutlineIcon from '@mui/icons-material/CheckCircleOutline';
 import { handleAddToCart } from 'redux/slices';
+import { Reviews } from './pages/Reviews';
 
 export const ProductPage = () => {
   const allProducts = useSelector(state => state.products);
@@ -32,7 +33,7 @@ export const ProductPage = () => {
       {product && (
         <div className="productCard">
           {/* <BackBtn to={savedNavigate.current ?? 'xxx'}> */}
-          <BackBtn to={savedNavigate.current ?? '/'}>Назад</BackBtn>
+          <OutletLink to={savedNavigate.current ?? '/'}>Назад</OutletLink>
           <p className="productCard_title">{product?.product}</p>
           <div className="productCard_info">
             <img
@@ -45,7 +46,7 @@ export const ProductPage = () => {
                 <div className="productCard_info-price">
                   {'Ціна ' + product?.price + ' грн'}
                 </div>{' '}
-                <DoubleArrowIcon htmlColor="#008000" />{' '}
+                <DoubleArrowIcon className="global-color" />{' '}
                 <p
                   onClick={() => {
                     dispatch(handleAddToCart(product));
@@ -53,13 +54,13 @@ export const ProductPage = () => {
                   className="productCard_info-addtocart"
                 >
                   {checkThatInTheCart(product.cid)
-                    ? 'Товар в корзину додано'
-                    : 'Додати в в корзину'}
+                    ? 'Товар додано'
+                    : `Додати в корзину `}
                 </p>
                 {checkThatInTheCart(product.cid) && (
                   <CheckCircleOutlineIcon
                     fontSize="large"
-                    htmlColor="#008000"
+                    className="global-color"
                   />
                 )}{' '}
               </div>
@@ -94,24 +95,44 @@ export const ProductPage = () => {
               )}
               <p className="productCard_info-benefits">переваги: </p>
               <ul className="productCard_info-benefits-list">
-                {product.benefits && product?.benefits?.map((benefit, index) => (
-                  <li key={index} className="productCard_info-benefits-item">
-                    <CheckCircleOutlineIcon htmlColor="#008000" /> {benefit}
-                  </li>
-                ))}
+                {product.benefits &&
+                  product?.benefits?.map((benefit, index) => (
+                    <li key={index} className="productCard_info-benefits-item">
+                      <CheckCircleOutlineIcon className="global-color" />{' '}
+                      {benefit}
+                    </li>
+                  ))}
               </ul>
             </div>
+            <div className="productCard_info-reviews">
+              <Reviews id={id} />
+            </div>
           </div>
+          <div className="productCard_info-reviews-mobileandtablet">
+              <Reviews id={id} />
+            </div>
           <div className="productCard_btnlist">
-          {typeof product?.about === "string" && product?.about &&  <OutletLink to="about">Опис</OutletLink>}
-          {typeof product?.components !== "string" && product?.components && <OutletLink to="components">Компоненти</OutletLink>}
-          {typeof product?.diia !== "string" && product?.diia && product?.diia.length > 0 && <OutletLink to="diia">Дія комплексів</OutletLink>}
-          {product?.usage !== "" && product?.usage &&<OutletLink to="usage">Використання</OutletLink>}
+            {product?.about !== '' && product?.about && (
+              <OutletLink to="about">Опис</OutletLink>
+            )}
+            {product?.components !== '' && product?.components && (
+              <OutletLink to="components">Компоненти</OutletLink>
+            )}
+            {product?.diia !== '' && product?.diia && (
+              <OutletLink to="diia">Дія комплексів</OutletLink>
+            )}
+            {product?.usage !== '' && product?.usage && (
+              <OutletLink to="usage">Використання</OutletLink>
+            )}
+            <OutletLink to="addreview" 
+            // state={{ id: id }}
+            >
+              Додати відгук про товар
+            </OutletLink>
           </div>
 
           <div className="productCard_outlet">
-            {' '}
-            <Outlet />{' '}
+            <Outlet />
           </div>
         </div>
       )}

@@ -1,10 +1,10 @@
 *,
 *::before,
 *::after {
-    box-sizing: border-box;
-    font-family: 'Sofia Sans Condensed', sans-serif;
-    font-family: 'Raleway', sans-serif;
+    box-sizing: border-box; 
+    font-family: 'Roboto', sans-serif;
     border: 0 solid #e5e7eb;
+    // color: #000000;
     
 
 }
@@ -13,11 +13,16 @@ html, body {
    height: 100%;
     margin: 0;
     padding: 0;
+    background-color: #264d32;
 }
 
 #root {
     height: 100%;
 }
+
+// div {
+// color: #000000
+// }
 
 .globalWrapper {
     min-height: 100%;
@@ -40,7 +45,8 @@ $big-pc: 1919.98 + px;
 
 // Colors
 
-$main-color: #008000;
+// $main-color: #008000;
+$main-color: #264d32;
 $secondary-color: #000080;
 $third-color: #800000;
 $main-grey: #e5e7eb;
@@ -67,9 +73,17 @@ li {
 ul {
     list-style: none;
 }
+// th, td {
+//     text-align: left;
+//   }
+
+.global-color{
+    color: $main-color;
+    fill: $main-color
+}
 
 .container {
-    padding: 0 5px;
+    // padding: 150px 5px;
     margin: 0 auto;
     min-width: 320px;
  
@@ -104,4 +118,20 @@ ul {
 div{
     margin: 0;
     padding: 0;
+}
+
+@media screen and (min-width: $mobile){   
+
+}
+
+@media screen and (min-width: $tablet){   
+
+}
+
+@media screen and (min-width: $pc){
+
+}
+
+@media screen and (min-width: $big-pc){   
+
 }

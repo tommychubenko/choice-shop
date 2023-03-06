@@ -7,6 +7,8 @@ import {
   handleSetMaxPrice,
   handleSetMinPrice,
 } from 'redux/slices';
+import { MobileMenu } from './MobileMenu';
+
 
 export const Filter = () => {
   const allProducts = useSelector(state => state.products);
@@ -30,18 +32,26 @@ export const Filter = () => {
   }, [allProducts]);
 
   return (
+    <>
+    
+   
+
     <div className="filter">
+      <p className="filter_title">Вибір за брендом</p>
+    
       {brands && (
         <ul className="filter_brand">
-          <li>
+          {/* <li>
             <p className="filter_title">Вибір за брендом</p>
-          </li>
+          </li> */}
 
           {brands.map(brand => (
             <li
               key={brands.indexOf(brand)}
               className="filter_item"
-              onClick={() => {navigate('/')}}
+              onClick={() => {
+                navigate('/');
+              }}
             >
               <label className="filter_label" htmlFor={brands.indexOf(brand)}>
                 <input
@@ -58,15 +68,13 @@ export const Filter = () => {
                   {allProducts
                     .filter(product => product.subbrand === brand)
                     .reduce((acc, product) => {
-                      if (!acc.includes(product.group)){
-                        acc.push(product.group)
+                      if (!acc.includes(product.group)) {
+                        acc.push(product.group);
                       }
-                      return acc
-
+                      return acc;
                     }, [])
                     .map((group, index) => (
-                      <li key={index + 100} className="filter_group-item">              
-
+                      <li key={index + 100} className="filter_group-item">
                         <input
                           type="radio"
                           name={group}
@@ -76,10 +84,7 @@ export const Filter = () => {
                             dispatch(selectedGroups(group));
                           }}
                         />
-                        <label
-                          htmlFor={group}
-                          className="filter_group-label"
-                        >
+                        <label htmlFor={group} className="filter_group-label">
                           {group}
                         </label>
                       </li>
@@ -91,38 +96,45 @@ export const Filter = () => {
         </ul>
       )}
 
-      <p className="filter_price-title">Фільтр по ціні</p>
+      <div className="filter_price">
+        <p className="filter_price-title">Фільтр по ціні</p>
 
-      <div className="filter_price-thumb">
-        Від
-        <input
-          className="filter_price-input"
-          type="text"
-          value={minPrice}
-          onChange={e => {
-            setMinPrice(e.target.value);
-          }}
-        />{' '}
-        до
-        <input
-          className="filter_price-input"
-          type="text"
-          value={maxPrice}
-          onChange={e => {
-            setMaxPrice(e.target.value);
-          }}
-        />
-        <button
-          type="button"
-          onClick={() => {
+        <form
+          onSubmit={e => {
+            e.preventDefault();
             dispatch(handleSetMaxPrice(+maxPrice + 1));
             dispatch(handleSetMinPrice(+minPrice - 1));
-            navigate('/')
+            // navigate('/')
           }}
         >
-          Знайти
-        </button>
+          <div className="filter_price-thumb">
+            Від
+            <input
+              className="filter_price-input"
+              type="text"
+              // defaultValue={minPrice}
+              value={minPrice}
+              onChange={e => {
+                setMinPrice(e.target.value);
+              }}
+            />{' '}
+            до
+            <input
+              className="filter_price-input"
+              type="text"
+              // defaultValue={maxPrice}
+              value={maxPrice}
+              onChange={e => {
+                setMaxPrice(e.target.value);
+              }}
+            />
+            <button type="submit" className="filter_price-btn">
+              Знайти
+            </button>
+          </div>
+        </form>
       </div>
     </div>
+    </>
   );
 };

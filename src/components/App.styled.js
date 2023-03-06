@@ -65,21 +65,21 @@ export const BackBtn = styled(NavLink)`
 `;
 
 export const OutletLink = styled(NavLink)`
-  //width: 84px;
   height: 36px;
   background-color: #ffffff;
   padding: 8px 16px;
-  border: 1px solid #008000;
+  border: 1px solid #264d32;
   border-radius: 4px;
   text-decoration: none;
-  color: #008000;
-  font-weight: 500;
+  color: #264d32;
+  font-weight: 400;
+  font-size: 14px;
   display: block;
-  margin-bottom: 15px;
+
 
 
   &.active {
   color: white;
-  background-color: #008000;
+  background-color: #264d32;
   }  
   `

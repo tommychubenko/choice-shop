@@ -4,7 +4,8 @@
     top: 0;
     left: 0;
     padding: 0 30px;
-    background-color: $main-color;
+    background: $main-color;
+    background: linear-gradient(0deg, rgba(38,77,50,1) 0%, rgba(19,50,29,1) 90%);
     position: fixed;
     display: flex;
     align-items: center;
@@ -18,6 +19,8 @@
 
     &_menu{
         display: flex;
+        align-items: center;
+        justify-content: center;
         gap: 15px;
     }
 }

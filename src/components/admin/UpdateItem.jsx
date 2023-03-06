@@ -1,8 +1,10 @@
 import { useRef, useState } from 'react';
-import { fixItem } from 'redux/api';
-import { Notify } from 'notiflix/build/notiflix-notify-aio';
+import { Notify } from 'notiflix';
 import { groups, subbrands } from './libruary';
 import { useSelector } from 'react-redux';
+import { db } from 'config/firebase';
+import {updateDoc, doc} from 'firebase/firestore';
+
 
 export const UpdateItem = () => {
   const [exactProduct, setExactProduct] = useState([]);
@@ -10,6 +12,21 @@ export const UpdateItem = () => {
   const allProducts = useSelector(state => state.products);
   const sendfix = useRef();
   const inputid = useRef();
+
+const updateProductToFireStore = async product => {
+  const productDoc = doc(db, 'products', product.id)
+
+    try {
+      await updateDoc(productDoc, product );
+      Notify.success('Товар успішно змінений');
+      setExactProduct([])
+      inputid.current.value = ''
+
+    } catch (error) {
+      Notify.failure(error.message); 
+    }
+  };
+  
 
   // Перевірка чи ID введений (не пустий)
   function getDataFromId(e) {
@@ -19,8 +36,9 @@ export const UpdateItem = () => {
       : Notify.failure('Введіть номер ID');
   }
 
-  function getExactProduct(id) {
-    const result = allProducts.filter(product => +product.cid === +id);
+  function getExactProduct(cid) {
+    const result = allProducts.filter(product => +product.cid === +cid);
+ 
 
     if (result.length > 0) {
       setExactProduct(result);
@@ -29,10 +47,10 @@ export const UpdateItem = () => {
       return;
     } else {
       Notify.failure('Товар не знайдений, дані не завантажені');
-    }
-
-    // getProducts().then(r => dispatch(setAllProductsToState(r)));
+    }  
   }
+
+  // Завантажити виправлний товар 
 
   const onSubmit = e => {
     e.preventDefault();
@@ -40,31 +58,26 @@ export const UpdateItem = () => {
     const result = {};
 
     inputData.forEach(item => {
-      const data = item.childNodes[0];
+      const input = item.childNodes[0];
       if (item.nodeName !== 'BUTTON') {
-        if (data.value === 'Так') {
-          return (result[`${data.name}`] = true);
-        } else if (data.value === 'Ні') {
-          return (result[`${data.name}`] = false);
-        } else if (data.value.includes('+')) {
-          return (result[`${data.name}`] = data.value.split('+'));
-        } else if (data.value === '') {
-          return;
+        if (input.type === 'checkbox') {
+          return (result[`${input.name}`] = input.checked);
         }
-        result[data.name] = data.value;
+        if (input.type === 'number') {
+          return (result[`${input.name}`] = input.valueAsNumber);
+        } else if (input.value.includes('+')) {
+          return (result[`${input.name}`] = input.value.split('+'));
+        } 
+        result[input.name] = input.value;
       }
     });
-    Notify.success('Товар успішно змінений');
-
-    return (
-      // console.log(result, result?.id);
-      (inputid.current.value = ''),
-      fixItem(result, result?.id).then(setExactProduct(ps => (ps.length = 0)))
-    );
-
-    //  getProducts().then(r => dispatch(setAllProductsToState(r)));
-    // return
+    return  updateProductToFireStore(result, result.id)
   };
+
+  const getStringOrArray = (data) =>  typeof data === "string" ? data : data.join('+')
+  
+
+
 
   return (
     <>
@@ -84,11 +97,7 @@ export const UpdateItem = () => {
         </datalist>
       }
 
-      <datalist id="boolean">
-        <option value={'Так'}></option>
-        <option value={'Ні'}></option>
-      </datalist>
-
+    
       <div className="sendnew">
         <h3
           className="sendnew_title"
@@ -129,11 +138,11 @@ export const UpdateItem = () => {
             >
               <label className="send_title">
                 <input
-                  type="number"
+                  type="text"
                   name="id"
                   className="send_input"
                   required={true}
-                  defaultValue={exactProduct[0]?.id}
+                  value={exactProduct[0]?.id}
                   disabled={true}
                 />
                 ID
@@ -203,7 +212,9 @@ export const UpdateItem = () => {
                   type="text"
                   name="zastosuvannya"
                   className="send_input"
-                  defaultValue={exactProduct[0]?.zastosuvannya}
+                  defaultValue={
+                    getStringOrArray(exactProduct[0]?.zastosuvannya)
+                    }
                 />
                 Застосування
               </label>
@@ -212,7 +223,9 @@ export const UpdateItem = () => {
                   type="text"
                   name="programma"
                   className="send_input"
-                  defaultValue={exactProduct[0]?.programma}
+                  defaultValue={
+                    getStringOrArray(exactProduct[0]?.programma)
+                    }
                 />
                 Програма, якщо декілька програм, ставити +
               </label>
@@ -224,9 +237,7 @@ export const UpdateItem = () => {
                   name="benefits"
                   className="send_input"
                   defaultValue={
-                    typeof exactProduct[0]?.benefits === 'string'
-                      ? '+'
-                      : exactProduct[0]?.benefits?.join('+')
+                  getStringOrArray(exactProduct[0]?.benefits)
                   }
                 />
                 Переваги, через +
@@ -238,7 +249,9 @@ export const UpdateItem = () => {
                   type="text"
                   name="about"
                   className="send_input"
-                  defaultValue={exactProduct[0]?.about}
+                  defaultValue={
+                    getStringOrArray(exactProduct[0]?.about)
+                    }
                 />
                 Про товар
               </label>
@@ -249,10 +262,8 @@ export const UpdateItem = () => {
                   name="components"
                   className="send_input"
                   defaultValue={
-                    typeof exactProduct[0]?.components === 'string'
-                      ? '+'
-                      : exactProduct[0]?.components?.join('+')
-                  }
+                    getStringOrArray(exactProduct[0]?.components)
+                    }
                 />
                 Компоненти, через +
               </label>
@@ -264,10 +275,8 @@ export const UpdateItem = () => {
                   name="diia"
                   className="send_input"
                   defaultValue={
-                    typeof exactProduct[0]?.diia === 'string'
-                      ? '+'
-                      : exactProduct[0]?.diia?.join('+')
-                  }
+                    getStringOrArray(exactProduct[0]?.diia)
+                    }
                 />
                 дія компексів, через +
               </label>
@@ -279,10 +288,8 @@ export const UpdateItem = () => {
                   name="usage"
                   className="send_input"
                   defaultValue={
-                    typeof exactProduct[0]?.usage === 'string'
-                      ? exactProduct[0]?.usage
-                      : exactProduct[0]?.usage?.join('+')
-                  }
+                    getStringOrArray(exactProduct[0]?.usage)
+                    }
                 />
                 Використання, через +
               </label>
@@ -316,38 +323,39 @@ export const UpdateItem = () => {
               </label>
               <label className="send_title">
                 <input
-                  type="text"
+                  type="number"
                   name="myprice"
                   className="send_input"
                   defaultValue={exactProduct[0]?.myprice}
+                  required
                 />
                 Ціна оптова
               </label>
               <label className="send_title">
                 <input
-                  type="text"
+                  type="number"
                   name="price"
                   className="send_input"
                   defaultValue={exactProduct[0]?.price}
+                  required
                 />
                 Ціна роздрібна
               </label>
               <label className="send_title">
                 <input
-                  type="text"
+                   type="checkbox"
                   name="top"
                   className="send_input"
-                  defaultValue={'Ні'}
-                  list={'boolean'}
+                  defaultChecked={exactProduct[0]?.top}
+                
                 />
                 В топі?
               </label>
               <label className="send_title">
                 <input
-                  type="text"
+                  type="checkbox"
                   name="inStock"
-                  list={'boolean'}
-                  defaultValue={'Так'}
+                  defaultChecked={exactProduct[0]?.inStock}
                   className="send_input"
                 />
                 В наявності?

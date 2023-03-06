@@ -1,6 +1,26 @@
 import {createSlice } from '@reduxjs/toolkit';
 import { filterByBrand, setMinPrice, setMaxPrice, filterByGroup, setToBasket, plusToBasket, minusToBasket, deleteFromBasket } from './operations';
 
+export const user = createSlice({
+  name: 'User', 
+  initialState: null,
+  reducers: {
+    setUserData(state, action){
+      return state = action.payload
+    }
+  }
+})
+
+export const reviews = createSlice({
+  name: 'Reviews', 
+  initialState: null,
+  reducers: {
+    setAllReviews(state, action){
+      return state = action.payload
+    }
+  }
+})
+
 
 export const allProducts = createSlice({
     name: 'Products',
@@ -66,7 +86,8 @@ export const allProducts = createSlice({
     },
    
   });
-
+export const {setUserData} = user.actions
+export const {setAllReviews} = reviews.actions
 export const { setAllProductsToState} = allProducts.actions;
 export const { handleFind } = find.actions;
 export const { selectedBrands, selectedGroups, handleSetMinPrice, handleSetMaxPrice } = filter.actions;

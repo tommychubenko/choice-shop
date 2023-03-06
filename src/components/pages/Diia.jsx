@@ -16,7 +16,7 @@ export const Diia =()  => {
 
 
 
-    return  product && <ul className="components_list">{product && product[0]?.diia.map((diia, index) => <li className="components_item" key={index}><AddchartIcon htmlColor="#008000"/> {diia}</li>)}
+    return  product && (typeof product[0]?.diia !== 'string' ? <ul className="components_list">{product && product[0]?.diia.map((diia, index) => <li className="components_item" key={index}><AddchartIcon className="global-color"/> {diia}</li>)}
 
-    </ul>
+    </ul> : <p>{product[0]?.diia}</p> )
 }

@@ -1,0 +1,24 @@
+.mobileMenu {
+    height: 100%;
+    padding: 20px 5px;
+
+    background-color: $main-color;
+
+
+
+
+
+    &_icon {
+        @media screen and (min-width: $mobile) {}
+
+        @media screen and (min-width: $tablet) {
+        
+        }
+
+        @media screen and (min-width: $pc) {
+            display: none;
+        }
+
+        @media screen and (min-width: $big-pc) {}
+    }
+}

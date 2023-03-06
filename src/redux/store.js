@@ -1,18 +1,5 @@
 import { configureStore } from '@reduxjs/toolkit';
-import {basket, filter, allProducts, find } from './slices'
-
-// import {
-//   persistStore,
-//   persistReducer,
-//   FLUSH,
-//   REHYDRATE,
-//   PAUSE,
-//   PERSIST,
-//   PURGE,
-//   REGISTER,
-// } from 'redux-persist';
-// import storage from 'redux-persist/lib/storage';
-
+import {basket, filter, allProducts, find, user, reviews } from './slices'
 
 
 export const store = configureStore({
@@ -20,7 +7,9 @@ export const store = configureStore({
     products: allProducts.reducer,
     find: find.reducer,
     filter: filter.reducer,
-    basket: basket.reducer
+    basket: basket.reducer,
+    user: user.reducer,
+    reviews: reviews.reducer
   },
 });
 

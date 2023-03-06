@@ -1,7 +1,7 @@
 [
   {
-   "id": "1",
-   "cid": "338",
+  
+   "cid": 338,
    "type": "biofito",
    "brand": "Choice",
    "subbrand": "Choice fito",
@@ -45,13 +45,13 @@
    "smallImg": "https://cabinet.choice.ua/uploads/images/products/choice/%D0%B0%D0%BD%D1%82%D0%B8%D0%BF%D0%B0%D1%80%D0%B0%D0%B7%D0%B8%D1%82.jpg",
    "bigImg": "https://choice.ua/content/img/product/big/antiparazit.png",
    "videoLink": "",
-   "myprice": "109",
-   "price": "156",
+   "myprice": 109,
+   "price": 156,
    "top": false,
    "inStock": true
   },
   {
-   "id": "2",
+  
    "type": "biofito",
    "brand": "Choice",
    "subbrand": "Choice fito",
@@ -91,14 +91,14 @@
    "smallImg": "https://cabinet.choice.ua/uploads/images/products/choice/macrosorbnew.png",
    "bigImg": "https://choice.ua/content/img/product/big/makrosorb_big.png",
    "videoLink": "",
-   "myprice": "145",
-   "price": "207",
+   "myprice": 145,
+   "price": 207,
    "top": false,
-   "cid": "467",
+   "cid": 467,
    "inStock": true
   },
   {
-   "id": "3",
+  
    "type": "biofito",
    "brand": "Choice",
    "subbrand": "Choice fito",
@@ -166,14 +166,14 @@
    "smallImg": "https://cabinet.choice.ua/uploads/images/products/choice/%D0%B1%D0%B8%D0%BE%D0%BB%D0%B0%D0%B9%D0%BD.jpg",
    "bigImg": "https://choice.ua/content/img/product/big/biolayn.png",
    "videoLink": "",
-   "price": "200",
+   "price": 200,
    "top": false,
    "inStock": true,
-   "cid": "340",
-   "myprice": "140"
+   "cid": 340,
+   "myprice": 140
   },
   {
-   "id": "4",
+ 
    "type": "biofito",
    "brand": "Choice",
    "subbrand": "Добра Їжа",
@@ -208,14 +208,14 @@
    "smallImg": "https://cabinet.choice.ua/uploads/images/products/dobra/legumes_df.png",
    "bigImg": "https://thumb.tildacdn.com/tild3135-3964-4836-b632-666361623463/-/resize/761x/-/format/webp/TOVAR_BOB.png",
    "videoLink": "",
-   "myprice": "160",
-   "price": "229",
+   "myprice": 160,
+   "price": 229,
    "top": false,
-   "cid": "40555",
+   "cid": 40555,
    "inStock": true
   },
   {
-   "id": "5",
+
    "type": "biofito",
    "brand": "Choice",
    "subbrand": "Choice fito",
@@ -263,14 +263,14 @@
    "smallImg": "",
    "bigImg": "https://choice.ua/content/img/product/big/breyblok.png",
    "videoLink": "",
-   "price": "156",
+   "price": 156,
    "top": false,
    "inStock": true,
-   "cid": "341",
-   "myprice": "109"
+   "cid": 341,
+   "myprice": 109
   },
   {
-   "id": "6",
+
    "type": "biofito",
    "brand": "Choice",
    "subbrand": "Choice fito",
@@ -321,14 +321,14 @@
    "smallImg": "https://cabinet.choice.ua/uploads/images/products/choice/%D0%B1%D0%B0%D0%BB%D0%B0%D0%BD%D1%81.jpg",
    "bigImg": "https://choice.ua/content/img/product/big/balans.png",
    "videoLink": "",
-   "myprice": "109",
-   "price": "156",
+   "myprice": 109,
+   "price": 156,
    "top": false,
    "inStock": true,
-   "cid": "339"
+   "cid": 339
   },
   {
-   "id": "7",
+
    "type": "biofito",
    "brand": "Choice",
    "subbrand": "Choice fito",
@@ -375,14 +375,14 @@
    "smallImg": "",
    "bigImg": "https://choice.ua/content/img/product/big/briz.png",
    "videoLink": "",
-   "price": "156",
+   "price": 156,
    "top": false,
    "inStock": true,
-   "cid": "342",
-   "myprice": "109"
+   "cid": 342,
+   "myprice": 109
   },
   {
-   "id": "8",
+  
    "type": "biofito",
    "brand": "Choice",
    "subbrand": "Choice fito",
@@ -425,14 +425,14 @@
    "smallImg": "",
    "bigImg": "https://choice.ua/content/img/product/big/garmonia.png",
    "videoLink": "",
-   "price": "243",
+   "price": 243,
    "top": false,
    "inStock": true,
-   "cid": "343",
-   "myprice": "170"
+   "cid": 343,
+   "myprice": 170
   },
   {
-   "id": "9",
+
    "type": "biofito",
    "brand": "Choice",
    "subbrand": "Choice fito",
@@ -476,14 +476,14 @@
    "smallImg": "",
    "bigImg": "https://choice.ua/content/img/product/big/imunnaya_formula.png",
    "videoLink": "",
-   "price": "412",
+   "price": 412,
    "top": false,
    "inStock": true,
-   "cid": "345",
-   "myprice": "288"
+   "cid": 345,
+   "myprice": 288
   },
   {
-   "id": "10",
+ 
    "type": "biofito",
    "brand": "Choice",
    "subbrand": "Choice fito",
@@ -531,14 +531,14 @@
    "smallImg": "",
    "bigImg": "https://choice.ua/content/img/product/big/dinamika.png",
    "videoLink": "",
-   "price": "256",
+   "price": 256,
    "top": false,
    "inStock": true,
-   "cid": "344",
-   "myprice": "179"
+   "cid": 344,
+   "myprice": 179
   },
   {
-   "id": "11",
+  
    "type": "biofito",
    "brand": "Choice",
    "subbrand": "Choice fito",
@@ -592,14 +592,14 @@
    "smallImg": "",
    "bigImg": "https://choice.ua/content/img/product/big/intelect.png",
    "videoLink": "",
-   "price": "256",
+   "price": 256,
    "top": false,
    "inStock": true,
-   "cid": "346",
-   "myprice": "179"
+   "cid": 346,
+   "myprice": 179
   },
   {
-   "id": "12",
+
    "type": "biofito",
    "brand": "Choice",
    "subbrand": "Choice fito",
@@ -657,14 +657,14 @@
    "smallImg": "",
    "bigImg": "https://choice.ua/content/img/product/big/germicid.png",
    "videoLink": "",
-   "price": "273",
+   "price": 273,
    "top": false,
    "inStock": true,
-   "cid": "336",
-   "myprice": "191"
+   "cid": 336,
+   "myprice": 191
   },
   {
-   "id": "13",
+
    "type": "biofito",
    "brand": "Choice",
    "subbrand": "Choice fito",
@@ -705,14 +705,14 @@
    "smallImg": "",
    "bigImg": "https://choice.ua/content/img/product/big/omega.png",
    "videoLink": "",
-   "price": "223",
+   "price": 223,
    "top": false,
    "inStock": true,
-   "cid": "361",
-   "myprice": "156"
+   "cid": 361,
+   "myprice": 156
   },
   {
-   "id": "14",
+
    "type": "biofito",
    "brand": "Choice",
    "subbrand": "Choice fito",
@@ -761,14 +761,14 @@
    "smallImg": "",
    "bigImg": "https://choice.ua/content/img/product/big/klinhelp.png",
    "videoLink": "",
-   "price": "156",
+   "price": 156,
    "top": false,
    "inStock": true,
-   "cid": "347",
-   "myprice": "109"
+   "cid": 347,
+   "myprice": 109
   },
   {
-   "id": "15",
+
    "type": "biofito",
    "brand": "Choice",
    "subbrand": "Choice fito",
@@ -808,7 +808,7 @@
    "smallImg": "",
    "bigImg": "https://choice.ua/content/img/product/big/comfort.png",
    "videoLink": "",
-   "price": "327",
+   "price": 327,
    "top": false,
    "inStock": true,
    "diia": [
@@ -828,12 +828,12 @@
     "Марганець - без нього не можливе зростання і самовідновлення кісткових хрящів.",
     "Мідь – потрібна при комплексному лікуванні ревматоїдного артриту."
    ],
-   "cid": "348",
-   "myprice": "229"
+   "cid": 348,
+   "myprice": 229
   },
   {
-   "id": "16",
-   "cid": "349",
+
+   "cid": 349,
    "type": "biofito",
    "brand": "Choice",
    "subbrand": "Choice fito",
@@ -878,14 +878,14 @@
    "smallImg": "",
    "bigImg": "https://choice.ua/content/img/product/big/layfgard.png",
    "videoLink": "",
-   "myprice": "140",
-   "price": "200",
+   "myprice": 140,
+   "price": 200,
    "top": false,
    "inStock": true
   },
   {
-   "id": "17",
-   "cid": "350",
+
+   "cid": 350,
    "type": "biofito",
    "brand": "Choice",
    "subbrand": "Choice fito",
@@ -927,14 +927,14 @@
    "smallImg": "",
    "bigImg": "https://choice.ua/content/img/product/big/livseyv.png",
    "videoLink": "",
-   "myprice": "109",
-   "price": "156",
+   "myprice": 109,
+   "price": 156,
    "top": false,
    "inStock": true
   },
   {
-   "id": "18",
-   "cid": "351",
+
+   "cid": 351,
    "type": "biofito",
    "brand": "Choice",
    "subbrand": "Choice fito",
@@ -986,14 +986,13 @@
    "smallImg": "",
    "bigImg": "https://choice.ua/content/img/product/big/m_pauza.png",
    "videoLink": "",
-   "myprice": "170",
-   "price": "243",
+   "myprice": 170,
+   "price": 243,
    "top": false,
    "inStock": true
   },
   {
-   "id": "19",
-   "cid": "352",
+   "cid": 352,
    "type": "biofito",
    "brand": "Choice",
    "subbrand": "Choice fito",
@@ -1049,14 +1048,13 @@
    "smallImg": "",
    "bigImg": "https://choice.ua/content/img/product/big/norm.png",
    "videoLink": "",
-   "myprice": "109",
-   "price": "156",
+   "myprice": 109,
+   "price": 156,
    "top": false,
    "inStock": true
   },
   {
-   "id": "20",
-   "cid": "353",
+   "cid": 353,
    "type": "biofito",
    "brand": "Choice",
    "subbrand": "Choice fito",
@@ -1095,14 +1093,13 @@
    "smallImg": "",
    "bigImg": "https://choice.ua/content/img/product/big/ok.png",
    "videoLink": "",
-   "myprice": "156",
-   "price": "223",
+   "myprice": 156,
+   "price": 223,
    "top": false,
    "inStock": true
   },
   {
-   "id": "21",
-   "cid": "354",
+   "cid": 354,
    "type": "biofito",
    "brand": "Choice",
    "subbrand": "Choice fito",
@@ -1151,14 +1148,13 @@
    "smallImg": "",
    "bigImg": "https://choice.ua/content/img/product/big/p_sabalya.png",
    "videoLink": "",
-   "myprice": "170",
-   "price": "243",
+   "myprice": 170,
+   "price": 243,
    "top": false,
    "inStock": true
   },
   {
-   "id": "22",
-   "cid": "355",
+   "cid": 355,
    "type": "biofito",
    "brand": "Choice",
    "subbrand": "Choice fito",
@@ -1210,14 +1206,13 @@
    "smallImg": "",
    "bigImg": "https://choice.ua/content/img/product/big/ritm.png",
    "videoLink": "",
-   "myprice": "179",
-   "price": "256",
+   "myprice": 179,
+   "price": 256,
    "top": false,
    "inStock": true
   },
   {
-   "id": "23",
-   "cid": "356",
+   "cid": 356,
    "type": "biofito",
    "brand": "Choice",
    "subbrand": "Choice fito",
@@ -1279,15 +1274,14 @@
    "smallImg": "",
    "bigImg": "https://choice.ua/content/img/product/big/sanklin.png",
    "videoLink": "",
-   "myprice": "109",
-   "price": "156",
+   "myprice": 109,
+   "price": 156,
    "top": false,
    "inStock": true,
    "сid": "356"
   },
   {
-   "id": "24",
-   "cid": "357",
+   "cid": 357,
    "type": "biofito",
    "brand": "Choice",
    "subbrand": "Choice fito",
@@ -1333,14 +1327,13 @@
    "smallImg": "",
    "bigImg": "https://choice.ua/content/img/product/big/f_aktiv.png",
    "videoLink": "",
-   "myprice": "139",
-   "price": "199",
+   "myprice": 139,
+   "price": 199,
    "top": false,
    "inStock": true
   },
   {
-   "id": "25",
-   "cid": "358",
+   "cid": 358,
    "type": "biofito",
    "brand": "Choice",
    "subbrand": "Choice fito",
@@ -1394,14 +1387,14 @@
    "smallImg": "",
    "bigImg": "https://choice.ua/content/img/product/big/forvard.png",
    "videoLink": "",
-   "myprice": "148",
-   "price": "212",
+   "myprice": 148,
+   "price": 212,
    "top": false,
    "inStock": true
   },
   {
-   "id": "26",
-   "cid": "359",
+
+   "cid": 359,
    "type": "biofito",
    "brand": "Choice",
    "subbrand": "Choice fito",
@@ -1450,14 +1443,13 @@
    "smallImg": "",
    "bigImg": "https://choice.ua/content/img/product/big/frilayf.png",
    "videoLink": "",
-   "myprice": "139",
-   "price": "199",
+   "myprice": 139,
+   "price": 199,
    "top": false,
    "inStock": true
   },
   {
-   "id": "27",
-   "cid": "360",
+   "cid": 360,
    "type": "biofito",
    "brand": "Choice",
    "subbrand": "Choice fito",
@@ -1506,14 +1498,13 @@
    "smallImg": "",
    "bigImg": "https://choice.ua/content/img/product/big/hitozan.png",
    "videoLink": "",
-   "myprice": "229",
-   "price": "327",
+   "myprice": 229,
+   "price": 327,
    "top": false,
    "inStock": true
   },
   {
-   "id": "28",
-   "cid": "40032",
+    "cid": 40032,
    "type": "biofito",
    "brand": "Choice",
    "subbrand": "Choice fito",
@@ -1560,14 +1551,13 @@
    "smallImg": "",
    "bigImg": "https://choice.ua/content/img/product/big/ritm-serdca.png",
    "videoLink": "",
-   "myprice": "1738",
-   "price": "2485",
+   "myprice": 1738,
+   "price": 2485,
    "top": false,
    "inStock": true
   },
   {
-   "id": "29",
-   "cid": "427",
+    "cid": 427,
    "type": "biofito",
    "brand": "Choice",
    "subbrand": "Choice fito",
@@ -1601,14 +1591,13 @@
    "smallImg": "",
    "bigImg": "https://choice.ua/content/img/product/big/antiparasiticforchildren57.jpg",
    "videoLink": "",
-   "myprice": "951",
-   "price": "1360",
+   "myprice": 951,
+   "price": 1360,
    "top": false,
    "inStock": true
   },
   {
-   "id": "30",
-   "cid": "428",
+   "cid": 428,
    "type": "biofito",
    "brand": "Choice",
    "subbrand": "Choice fito",
@@ -1648,15 +1637,14 @@
    "smallImg": "https://cabinet.choice.ua/uploads/images/products/choice/UniversalAntiparasiticProgramForChildren712Years.jpg",
    "bigImg": "https://cabinet.choice.ua/uploads/images/products/choice/UniversalAntiparasiticProgramForChildren712Years.jpg",
    "videoLink": "",
-   "myprice": "950",
-   "price": "1359",
+   "myprice": 950,
+   "price": 1359,
    "top": false,
    "inStock": true,
-   "сid": "428"
+   "сid": 428
   },
   {
-   "id": "31",
-   "cid": "362",
+   "cid": 362,
    "type": "biofito",
    "brand": "Choice",
    "subbrand": "Choice fito",
@@ -1699,15 +1687,14 @@
    "smallImg": "",
    "bigImg": "https://choice.ua/content/img/product/big/antiparazitarnaya-programma2.png",
    "videoLink": "",
-   "myprice": "1371",
-   "price": "1960",
+   "myprice": 1371,
+   "price": 1960,
    "top": false,
    "inStock": true,
-   "сid": "362"
+   "сid": 362
   },
   {
-   "id": "32",
-   "cid": "40289",
+    "cid": 40289,
    "type": "biofito",
    "brand": "Choice",
    "subbrand": "Добра Їжа",
@@ -1754,14 +1741,13 @@
    "smallImg": "",
    "bigImg": "https://thumb.tildacdn.com/tild6437-3263-4466-a530-636539313361/-/resize/761x/-/format/webp/750750.png",
    "videoLink": "",
-   "myprice": "389",
-   "price": "565",
+   "myprice": 389,
+   "price": 565,
    "top": false,
    "inStock": true
   },
   {
-   "id": "33",
-   "cid": "40371",
+   "cid": 40371,
    "type": "biofito",
    "brand": "Choice",
    "subbrand": "Добра Їжа",
@@ -1836,14 +1822,13 @@
    "smallImg": "",
    "bigImg": "https://thumb.tildacdn.com/tild6364-6131-4766-b533-646165623864/-/resize/761x/-/format/webp/TOVAR_norma.png",
    "videoLink": "",
-   "myprice": "266",
-   "price": "380",
+   "myprice": 266,
+   "price": 380,
    "top": false,
    "inStock": true
   },
   {
-   "id": "34",
-   "cid": "40454",
+   "cid": 40454,
    "type": "biofito",
    "brand": "Choice",
    "subbrand": "Добра Їжа",
@@ -1900,15 +1885,14 @@
    "smallImg": "",
    "bigImg": "https://thumb.tildacdn.com/tild3334-6136-4032-a534-653065393433/-/resize/742x/-/format/webp/TOVAR_zerno_new_desi.png",
    "videoLink": "",
-   "myprice": "119",
-   "price": "170",
+   "myprice": 119,
+   "price": 170,
    "top": false,
    "inStock": true,
    "сid": "40454"
   },
   {
-   "id": "35",
-   "cid": "40582",
+   "cid": 40582,
    "type": "biofito",
    "brand": "Choice",
    "subbrand": "Добра Їжа",
@@ -1968,15 +1952,15 @@
    "smallImg": "",
    "bigImg": "https://thumb.tildacdn.com/tild3334-6136-4032-a534-653065393433/-/resize/742x/-/format/webp/TOVAR_zerno_new_desi.png",
    "videoLink": "",
-   "myprice": "224",
-   "price": "320",
+   "myprice": 224,
+   "price": 320,
    "top": false,
    "inStock": true,
    "сid": "40582"
   },
   {
-   "id": "36",
-   "cid": "40458",
+   
+   "cid": 40458,
    "type": "biofito",
    "brand": "Choice",
    "subbrand": "Добра Їжа",
@@ -2025,15 +2009,15 @@
    "smallImg": "",
    "bigImg": "https://thumb.tildacdn.com/tild3432-3764-4633-b637-633134353137/-/resize/647x/-/format/webp/TOVAR____2.png",
    "videoLink": "",
-   "myprice": "81",
-   "price": "116",
+   "myprice": 81,
+   "price": 116,
    "top": false,
    "inStock": true,
    "сid": "40458"
   },
   {
-   "id": "37",
-   "cid": "40558",
+   
+   "cid": 40558,
    "type": "biofito",
    "brand": "Choice",
    "subbrand": "White Mandarin",
@@ -2112,14 +2096,14 @@
    "smallImg": "",
    "bigImg": "https://whitemandarin.com/media/content/Thumbnail/241/big.png?v=8",
    "videoLink": "",
-   "myprice": "369",
-   "price": "528",
+   "myprice": 369,
+   "price": 528,
    "top": false,
    "inStock": true
   },
   {
-   "id": "38",
-   "cid": "40580",
+   
+   "cid": 40580,
    "type": "biofito",
    "brand": "Choice",
    "subbrand": "White Mandarin",
@@ -2165,15 +2149,15 @@
    "smallImg": "",
    "bigImg": "https://whitemandarin.com/media/content/Thumbnail/33/big.png?v=8",
    "videoLink": "",
-   "myprice": "326",
-   "price": "466",
+   "myprice": 326,
+   "price": 466,
    "top": false,
    "inStock": true,
    "сid": "40580"
   },
   {
-   "id": "39",
-   "cid": "40029",
+   
+   "cid": 40029,
    "type": "biofito",
    "brand": "Choice",
    "subbrand": "White Mandarin",
@@ -2217,14 +2201,14 @@
    "smallImg": "",
    "bigImg": "https://whitemandarin.com/media/content/Thumbnail/226/big.png?v=8",
    "videoLink": "",
-   "myprice": "73",
-   "price": "104",
+   "myprice": 73,
+   "price": 104,
    "top": false,
    "inStock": true
   },
   {
-   "id": "40",
-   "cid": "40557",
+   
+   "cid": 40557,
    "type": "biofito",
    "brand": "Choice",
    "subbrand": "White Mandarin",
@@ -2287,14 +2271,14 @@
    "smallImg": "",
    "bigImg": "https://whitemandarin.com/media/content/Thumbnail/242/big.png?v=8",
    "videoLink": "",
-   "myprice": "369",
-   "price": "528",
+   "myprice": 369,
+   "price": 528,
    "top": false,
    "inStock": true
   },
   {
-   "id": "41",
-   "cid": "40575",
+   
+   "cid": 40575,
    "type": "biofito",
    "brand": "Choice",
    "subbrand": "White Mandarin",
@@ -2363,15 +2347,15 @@
    "smallImg": "",
    "bigImg": "https://whitemandarin.com/media/content/Thumbnail/261/big.png?v=8",
    "videoLink": "",
-   "myprice": "355",
-   "price": "508",
+   "myprice": 355,
+   "price": 508,
    "top": false,
    "inStock": true,
    "сid": "40575"
   },
   {
-   "id": "42",
-   "cid": "40577",
+   
+   "cid": 40577,
    "type": "biofito",
    "brand": "Choice",
    "subbrand": "White Mandarin",
@@ -2434,14 +2418,14 @@
    "smallImg": "",
    "bigImg": "https://whitemandarin.com/media/content/Thumbnail/47/big.png?v=8",
    "videoLink": "",
-   "myprice": "438",
-   "price": "626",
+   "myprice": 438,
+   "price": 626,
    "top": false,
    "inStock": true
   },
   {
-   "id": "43",
-   "cid": "492",
+   
+   "cid": 492,
    "type": "biofito",
    "brand": "Choice",
    "subbrand": "White Mandarin",
@@ -2496,14 +2480,14 @@
    "smallImg": "",
    "bigImg": "https://whitemandarin.com/media/content/Thumbnail/131/big.png?v=8",
    "videoLink": "",
-   "myprice": "59",
-   "price": "84",
+   "myprice": 59,
+   "price": 84,
    "top": false,
    "inStock": true
   },
   {
-   "id": "44",
-   "cid": "491",
+   
+   "cid": 491,
    "type": "biofito",
    "brand": "Choice",
    "subbrand": "White Mandarin",
@@ -2568,14 +2552,14 @@
    "smallImg": "",
    "bigImg": "https://whitemandarin.com/media/content/Thumbnail/124/big.png?v=8",
    "videoLink": "",
-   "myprice": "67",
-   "price": "96",
+   "myprice": 67,
+   "price": 96,
    "top": false,
    "inStock": true
   },
   {
-   "id": "45",
-   "cid": "40548",
+   
+   "cid": 40548,
    "type": "biofito",
    "brand": "Choice",
    "subbrand": "White Mandarin",
@@ -2639,14 +2623,14 @@
    "smallImg": "",
    "bigImg": "https://whitemandarin.com/media/content/Thumbnail/45/big.png?v=8",
    "videoLink": "",
-   "myprice": "328",
-   "price": "469",
+   "myprice": 328,
+   "price": 469,
    "top": false,
    "inStock": true
   },
   {
-   "id": "46",
-   "cid": "40549",
+   
+   "cid": 40549,
    "type": "biofito",
    "brand": "Choice",
    "subbrand": "White Mandarin",
@@ -2702,14 +2686,14 @@
    "smallImg": "",
    "bigImg": "https://whitemandarin.com/media/content/Thumbnail/48/big.png?v=8",
    "videoLink": "",
-   "myprice": "450",
-   "price": "643",
+   "myprice": 450,
+   "price": 643,
    "top": false,
    "inStock": true
   },
   {
-   "id": "47",
-   "cid": "494",
+   
+   "cid": 494,
    "type": "biofito",
    "brand": "Choice",
    "subbrand": "White Mandarin",
@@ -2766,14 +2750,14 @@
    "smallImg": "",
    "bigImg": "https://whitemandarin.com/media/content/Thumbnail/126/big.png?v=8",
    "videoLink": "",
-   "myprice": "64",
-   "price": "92",
+   "myprice": 64,
+   "price": 92,
    "top": false,
    "inStock": true
   },
   {
-   "id": "48",
-   "cid": "40581",
+   
+   "cid": 40581,
    "type": "biofito",
    "brand": "Choice",
    "subbrand": "White Mandarin",
@@ -2836,14 +2820,14 @@
    "smallImg": "",
    "bigImg": "https://whitemandarin.com/media/content/Thumbnail/38/big.png?v=8",
    "videoLink": "",
-   "myprice": "441",
-   "price": "631",
+   "myprice": 441,
+   "price": 631,
    "top": false,
    "inStock": true
   },
   {
-   "id": "49",
-   "cid": "40576",
+   
+   "cid": 40576,
    "type": "biofito",
    "brand": "Choice",
    "subbrand": "White Mandarin",
@@ -2904,14 +2888,14 @@
    "smallImg": "",
    "bigImg": "https://whitemandarin.com/media/content/Thumbnail/52/big.png?v=8",
    "videoLink": "",
-   "myprice": "365",
-   "price": "522",
+   "myprice": 365,
+   "price": 522,
    "top": false,
    "inStock": true
   },
   {
-   "id": "50",
-   "cid": "40578",
+   
+   "cid": 40578,
    "type": "biofito",
    "brand": "Choice",
    "subbrand": "White Mandarin",
@@ -2973,14 +2957,14 @@
    "smallImg": "",
    "bigImg": "https://whitemandarin.com/media/content/Thumbnail/46/big.png?v=8",
    "videoLink": "",
-   "myprice": "481",
-   "price": "688",
+   "myprice": 481,
+   "price": 688,
    "top": false,
    "inStock": true
   },
   {
-   "id": "51",
-   "cid": "40087",
+   
+   "cid": 40087,
    "type": "biofito",
    "brand": "Choice",
    "subbrand": "White Mandarin",
@@ -3030,14 +3014,14 @@
    "smallImg": "",
    "bigImg": "https://whitemandarin.com/media/content/Thumbnail/244/big.png?v=8",
    "videoLink": "",
-   "myprice": "183",
-   "price": "262",
+   "myprice": 183,
+   "price": 262,
    "top": false,
    "inStock": true
   },
   {
-   "id": "52",
-   "cid": "384",
+   
+   "cid": 384,
    "type": "biofito",
    "brand": "Choice",
    "subbrand": "White Mandarin",
@@ -3084,15 +3068,15 @@
    "smallImg": "",
    "bigImg": "https://whitemandarin.com/media/content/Thumbnail/31/big.png?v=8",
    "videoLink": "",
-   "myprice": "155",
-   "price": "222",
+   "myprice": 155,
+   "price": 222,
    "top": false,
    "inStock": true,
-   "сid": "384"
+   "сid": 384
   },
   {
-   "id": "53",
-   "cid": "386",
+   
+   "cid": 386,
    "type": "biofito",
    "brand": "Choice",
    "subbrand": "White Mandarin",
@@ -3139,15 +3123,15 @@
    "smallImg": "",
    "bigImg": "https://cabinet.choice.ua/uploads/images/products/whitemandarin/gelDlyaIntimnoyGigieniTcitrus250ml.jpeg",
    "videoLink": "",
-   "myprice": "156",
-   "price": "223",
+   "myprice": 156,
+   "price": 223,
    "top": false,
    "inStock": true,
    "сid": "386"
   },
   {
-   "id": "54",
-   "cid": "40089",
+  
+   "cid": 40089,
    "type": "biofito",
    "brand": "Choice",
    "subbrand": "White Mandarin",
@@ -3195,15 +3179,14 @@
    "smallImg": "",
    "bigImg": "https://whitemandarin.com/media/content/Thumbnail/251/big.png?v=8",
    "videoLink": "",
-   "myprice": "",
-   "price": "",
+   "myprice": 162,
+   "price": 232,
    "top": false,
-   "inStock": true,
-   "сid": "40089"
+   "inStock": true 
   },
   {
-   "id": "55",
-   "cid": "40523",
+  
+   "cid": 40523,
    "type": "biofito",
    "brand": "Choice",
    "subbrand": "White Mandarin",
@@ -3245,10 +3228,63 @@
    "smallImg": "",
    "bigImg": "https://whitemandarin.com/media/content/Thumbnail/254/big.png?v=8",
    "videoLink": "",
-   "myprice": "121",
-   "price": "173",
+   "myprice": 121,
+   "price": 173,
    "top": false,
    "inStock": true,
-   "сid": "40523"
+   "сid": 40523
+  },
+  {
+  
+   "cid": 40088,
+   "type": "biofito",
+   "brand": "Choice",
+   "subbrand": "White Mandarin",
+   "group": "Догляд за тілом та руками",
+   "product": "Крем для рук \"Зволоження та захист\"",
+   "zastosuvannya": "",
+   "programma": "",
+   "benefits": [
+    "",
+    "загоює і відновлює шкіру;\n",
+    "вирівнює тон шкіри;\n",
+    "збільшує еластичність і пружність;\n",
+    "зволожує і захищає;\n",
+    "живить вітамінами і мікроелементами;\n",
+    "здійснює лікувальний ефект."
+   ],
+   "about": "Крем для рук живить, заспокоює та відновлює, забезпечуючи інтенсивне зволоження. Захисна плівка захищає епідерміс від ушкодження агресивними речовинами. Повертає шкірі відчуття комфорту, підвищує пружність і еластичність шкіри рук.\n\nВітаміни А, D, Е, С, К олій оливки, бабасу та жожоба омолоджують і живлять шкіру. Разом із поліфенолами захищають шкіру від негативних факторів: хлорованої води, побутової хімії, УФ-випромінювання. Вітамін С та омега-6 зміцнюють судини, налагоджують живлення та кровообіг.\n\nЖирні кислоти та антиоксиданти олії таману активують процеси оновлення на клітинному рівні, дарують еластичність, а також стимулють рух крові й лімфи, завдяки чому знімають набряки.\n\nПептиди й амінокислоти протеїнів шовку стимулюють вироблення власного колагену, сприяють зволоженню шкіри, роблять її гладенькою.\n\nВітаміни та мікроелементи екстракту фукусу й ламінарії підвищують клітинний метаболізм, стимулюють омолодження, а полісахариди глибоко зволожують шкіру рук.",
+   "components": [
+    "Вода очищена (Aqua), ",
+    "олія оливкова (ОІеа Europaea Fruit OiI), ",
+    "віск емульсійний рослинного походження (Emulsifying Wax), ",
+    "рослинний емульгатор (Cetearyl Glucoside (and) Cetearyl Alcohol), ",
+    "олія таману (Calophyllum inophyllum (Tamanu) Seed Oil), ",
+    "олія бабасу (Babassu Oil), ",
+    "олія жожоба (Jojoba Oil), ",
+    "гідролізат протеїнів шовку (Нуdrоlized SіІk), ",
+    "екстракт огірка (Cucumber (Cucumis Sativus) Fruit Extract), ",
+    "екстракт фукуса (Aglae Extract), ",
+    "рослинний гліцерин, (Glycerin), ",
+    "харчовий консервант (Optiphen BD), * СО2 екстракт ламінарії (Laminaria saccharina Extract), ",
+    "алантоїн (Symphytum Officinale (Comfrey) Root Cell Extract), ",
+    "ефірні олії: троянди галліки, ванілі абсолют, ладану, міри. ",
+    "* Сертифікат Ecocert"
+   ],
+   "diia": [
+    "Гідролізат протеїнов шовку - завдяки високій проникності в шкіру він пом'якшує та швидко насичує протеїнами та пептидами; забезпечує рівний колір, матовість та ніжність; підтягує шкіру, надаючи їй пружність; сприяє загоєнню ранок і тріщин. Висока концентрація амінокислоти гліцин забезпечує тривале зволоження\n\n",
+    "Масло таману - регенерація і загоєння, антибактеріальне і протизапальну дію, сприяє поліпшенню структури шкіри. Завдяки впливу на клітинний метаболізм одне з кращих зволожуючих масел.\n",
+    "Масло бабасу - зволожує і пом'якшує, робить шкіру рук шовковистою, захищає від зневоднення, збільшує еластичність і пружність, має яскраво виражену антибактеріальну дію.\n",
+    "Екстракт огірка - зволожує і захищає, стимулює оновлення клітин і омолоджує, вирівнює тон шкіри і відбілює, освіжає і пом'якшує.\n",
+    "Екстракт фукуса і ламінарії - високий вміст вітамінів і мікроелементів живлять нашу шкіру і в результаті шкіра отримує - захист, омолодження, лікувальний ефект."
+   ],
+   "usage": "Рекомендуємо кожен день наносити крем вранці і ввечері на суху чисту шкіру рук, нігтів і кутикул, злегка втираючи в нігтьову пластину. Застосовуйте після кожного контакту з водою!",
+   "smallImg": "",
+   "bigImg": "https://whitemandarin.com/media/content/Thumbnail/243/big.png?v=8",
+   "videoLink": "",
+   "myprice": 135,
+   "price": 193,
+   "top": false,
+   "inStock": true
   }
  ]

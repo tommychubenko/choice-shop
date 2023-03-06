@@ -1,6 +1,6 @@
 import HighlightOffIcon from '@mui/icons-material/HighlightOff';
 import DeleteForeverIcon from '@mui/icons-material/DeleteForever';
-import { toggleBasket } from 'hooks/functions';
+import {OutletLink } from './App.styled';
 import { useDispatch, useSelector } from 'react-redux';
 import {
   handleIncrement,
@@ -9,14 +9,17 @@ import {
   deleteAll,
 } from 'redux/slices';
 import emptyCart from '../images/cart-empty.jpg';
-import { useEffect, useState } from 'react';
+import {useState } from 'react';
 import { OrderDetails } from './OrderDetails';
+import { useNavigate } from 'react-router';
+import { Backdrop } from '@mui/material';
 
 export const Basket = () => {
-  const [purchaised, setPurchaised] = useState(false);
-
+  // const [purchaised, setPurchaised] = useState(false);
   const productsInBasket = useSelector(state => state.basket);
+
   const dispatch = useDispatch();
+  const navigate = useNavigate();
 
   const totalPrice = () => {
     const value = productsInBasket.reduce((acc, product) => {
@@ -26,124 +29,125 @@ export const Basket = () => {
     return value;
   };
 
-  useEffect(() => {}, [productsInBasket]);
-
-  const turnStateFalse = () => {
-    setPurchaised(false);
-  };
+  // const turnStateFalse = () => {
+  //   setPurchaised(false);
+  // };
 
   return (
     <>
-      <div
-        className="backdrop backdrop_hidden"
-        onClick={e => {
-          toggleBasket();
+      <Backdrop
+        sx={{ zIndex: theme => theme.zIndex.drawer + 1 }}
+        open={true}
+        onClick={(e) => {
+          e.currentTarget === e.target &&
+          navigate(-1);
         }}
-      ></div>
-      <div className="modal modal_hidden">
-        <HighlightOffIcon
-          fontSize="large"
-          htmlColor="#008000"
-          className="closeBtn"
-          onClick={() => {
-            toggleBasket();
-          }}
-        />
+      >
+        <div className="modal">
+          <HighlightOffIcon
+            fontSize="large"
+            // htmlColor="#008000"
 
-        <p className="modal_title">Ваша корзина</p>
+            className="closeBtn global-color"
+            onClick={(e) => {
+                   navigate(-1);
+            }}
+          />
 
-        {productsInBasket.length === 0 && (
-          <div className=" basket_empty-wrapper">
-            <img
-              src={emptyCart}
-              className="basket_empty-image"
-              alt="Empty"
-            ></img>
-            <p className="basket_empty-text">
-              Ваша корзина пуста, але ніколи не пізно почати її наповнювати!
-            </p>{' '}
-          </div>
-        )}
+          <p className="modal_title">Ваша корзина</p>
 
-        {purchaised && <OrderDetails back={turnStateFalse} />}
-
-        {productsInBasket.length > 0 && !purchaised && (
-          <>
-            <div
-              className="modal_delete"
-              onClick={() => {
-                dispatch(deleteAll());
-              }}
-            >
-              Видалити все
+          {productsInBasket.length === 0 && (
+            <div className=" basket_empty-wrapper">
+              <img
+                src={emptyCart}
+                className="basket_empty-image"
+                alt="Empty"
+              ></img>
+              <p className="basket_empty-text">
+                Ваша корзина пуста, але ніколи не пізно почати її наповнювати!
+              </p>{' '}
             </div>
-            <ul className="basket_list">
-              {productsInBasket.map(product => (
-                <li key={product.cid} className="basket_item">
-                  <img src={product.bigImg} alt="" className="basket_image" />
-                  <p className="basket_title">{product.product}</p>
-                  <p className="basket_price">{product.price + ' грн'}</p>
-                  <div className="basket_amount-manage">
-                    <div className="basket_amount-controls">
-                      <button
-                        type="button"
-                        className="basket_amount-btn"
-                        onClick={() => {
-                          dispatch(handleIncrement(product.cid));
-                        }}
-                      >
-                        +
-                      </button>
-                      <div className="basket_amount-amount">
-                        {product.amount}
-                      </div>
-                      <button
-                        type="button"
-                        className="basket_amount-btn"
-                        onClick={() => {
-                          dispatch(handleDecrement(product.cid));
-                        }}
-                      >
-                        -
-                      </button>
-                      <DeleteForeverIcon
-                        fontSize="large"
-                        htmlColor="#008000"
-                        className="trashBtn"
-                        onClick={() => {
-                          dispatch(handleDelete(product.cid));
-                        }}
-                      />
-                    </div>
-                    <div className="basket_amount-total">
-                      {'Всього' +
-                        ' ' +
-                        product.price * product.amount +
-                        ' ' +
-                        'грн'}
-                    </div>
-                  </div>
-                </li>
-              ))}
-            </ul>
-            <div className="basket_total-wrapper">
-              <div className="basket_total-box">
-                <p className="basket_total-info">
-                  {'Всього ' + totalPrice() + ' грн'}
-                </p>
-                <button
-                  className="basket_total-btn"
-                  onClick={() => {
-                    setPurchaised(true);
-                  }}
-                >
-                  ЗАМОВИТИ
-                </button>
+          )}
+
+          {/* {purchaised && <OrderDetails back={turnStateFalse} />} */}
+
+          {productsInBasket.length > 0 && (
+            <>
+              <div
+                className="modal_delete"
+                onClick={() => {
+                  dispatch(deleteAll());
+                }}
+              >
+                Видалити все
               </div>
-            </div>
-          </>
-        )}
-      </div>
+              <ul className="basket_list">
+                {productsInBasket.map(product => (
+                  <li key={product.cid} className="basket_item">
+                    <img src={product.bigImg} alt="" className="basket_image" />
+                    <p className="basket_title">{product.product}</p>
+                    <p className="basket_price">{product.price + ' грн'}</p>
+                    <div className="basket_amount-manage">
+                      <div className="basket_amount-controls">
+                        <button
+                          type="button"
+                          className="basket_amount-btn"
+                          onClick={() => {
+                            dispatch(handleIncrement(product.cid));
+                          }}
+                        >
+                          +
+                        </button>
+                        <div className="basket_amount-amount">
+                          {product.amount}
+                        </div>
+                        <button
+                          type="button"
+                          className="basket_amount-btn"
+                          onClick={() => {
+                            dispatch(handleDecrement(product.cid));
+                          }}
+                        >
+                          -
+                        </button>
+                        <DeleteForeverIcon
+                          fontSize="large"
+                         
+                          className="trashBtn global-color"
+                          onClick={() => {
+                            dispatch(handleDelete(product.cid));
+                          }}
+                        />
+                      </div>
+                      <div className="basket_amount-total">
+                        {'Всього' +
+                          ' ' +
+                          product.price * product.amount +
+                          ' ' +
+                          'грн'}
+                      </div>
+                    </div>
+                  </li>
+                ))}
+              </ul>
+              <div className="basket_total-wrapper">
+                <div className="basket_total-box">
+                  <p className="basket_total-info">
+                    {'Всього ' + totalPrice() + ' грн'}
+                  </p>
+
+                  <OutletLink to='/order-details'>Замовити</OutletLink>
+                  {/* <button
+                    className="basket_total-btn"
+                                 >
+                    ЗАМОВИТИ
+                  </button> */}
+                </div>
+              </div>
+            </>
+          )}
+        </div>
+      </Backdrop>
     </>
   );
 };

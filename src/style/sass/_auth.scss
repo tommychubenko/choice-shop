@@ -1,0 +1,130 @@
+.auth {
+    width: 500px;
+    height: 500px;
+    position: absolute;
+    background-color: #FFFFFF;
+    padding: 20px 26px;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    border-radius: 15px;
+
+    &_wrapper {
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+    }
+
+    &_input {
+        width: 300px;
+    }
+
+    &_btn {
+        cursor: pointer;
+        width: fit-content;
+
+        &-wrapper {
+            display: flex;
+            gap: 5px;
+        }
+    }
+}
+
+.login {
+
+    &_wrapper {
+        display: flex;
+        flex-direction: column;
+    }
+
+    &_title {
+        color: $main-color;
+        font-weight: 300;     
+        margin-bottom: 14px;
+    }
+
+    &_discription {
+        font-weight: 500;
+        font-size: 12px;
+        margin-bottom: 5px;
+    }
+
+    &_input {
+        width: 100%;
+        height: 30px;
+        border: 1px solid $main-color;
+        border-radius: 3px;
+        padding: 5px;
+        font-weight: 400;
+        font-size: 14px;
+        color: $main-color;
+        margin-bottom: 15px;
+    }
+
+        &_btn{
+            width: 100%;
+            height: 30px;
+            background-color: $main-color;
+            border-radius: 3px;
+            color: #ffffff;
+            margin-bottom: 15px;
+            cursor: pointer;
+
+        }
+
+        &_google {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+            width: 100%;
+            height: 30px;
+            background-color: $main-color;
+            border-radius: 3px;
+            color: #ffffff;
+            cursor: pointer;
+            margin-bottom: 15px;
+        }
+
+        &_toregister {
+            font-size: 12px;
+            font-weight: 400;
+            color: $main-color;
+        }
+
+        
+}
+
+.user{
+    &_wrapper {
+        display: flex;
+        flex-direction: column;
+        // justify-content: center;
+        align-items: center;
+    }
+    &_title {
+        color: $main-color;
+        font-weight: 300;         
+        margin-bottom: 14px;
+    }
+
+    &_greeting{
+        font-size: 20px;
+        font-weight: 500;
+        margin-bottom: 20px;
+    }
+    &_photo {
+        width: 150px;
+        margin-bottom: 20px;
+    }
+
+    &_exit {
+        width: 100%;
+        height: 30px;
+        background-color: $main-color;
+        border-radius: 3px;
+        color: #ffffff;
+        margin-bottom: 15px;
+        cursor: pointer;
+    }
+}

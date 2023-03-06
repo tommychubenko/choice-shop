@@ -1,11 +1,9 @@
 import { useRef } from 'react';
-import { sendItem } from 'redux/api';
-import { Notify } from 'notiflix/build/notiflix-notify-aio';
-import { groups, subbrands } from './libruary';
+import { addNewProductToFireStore } from './adminFunctions';
 
+import { groups, subbrands } from './libruary';
 export const AddNewProduct = () => {
   const sendNew = useRef();
-
 
   const onSubmit = e => {
     e.preventDefault();
@@ -15,24 +13,20 @@ export const AddNewProduct = () => {
     inputData.forEach(item => {
       const input = item.childNodes[0];
       if (item.nodeName !== 'BUTTON') {
-        if (input.value === 'Так') {
-          return (result[`${input.name}`] = true);
-        } else if (input.value === 'Ні') {
-          return (result[`${input.name}`] = false);
+        if (input.type === 'checkbox') {
+          return (result[`${input.name}`] = input.checked);
+        }
+        if (input.type === 'number') {
+          return (result[`${input.name}`] = input.valueAsNumber);
         } else if (input.value.includes('+')) {
           return (result[`${input.name}`] = input.value.split('+'));
         }
         result[input.name] = input.value;
       }
     });
-
-    sendItem(result);
-    console.log(result);
+    addNewProductToFireStore(result);
     sendNew.current.reset();
-    Notify.success('Товар успішно доданий');
   };
-
-
 
   return (
     <>
@@ -52,20 +46,8 @@ export const AddNewProduct = () => {
         </datalist>
       }
 
-      <datalist id="boolean">
-        <option value={'Так'}></option>
-        <option value={'Ні'}></option>
-      </datalist>
-
       <div className="sendnew">
-        <h3
-          className="sendnew_title"
-          // onClick={() => {
-          //   sendNew.current.classList.toggle('scale');
-          // }}
-        >
-          Відправити новий продукт +
-        </h3>
+        <h3 className="sendnew_title">Відправити новий продукт +</h3>
 
         <div className="sendnew_body">
           <form
@@ -76,7 +58,7 @@ export const AddNewProduct = () => {
             ref={sendNew}
           >
             <label className="send_title">
-              <input type="number" name="cid" className="send_input" />
+              <input type="number" name="cid" className="send_input" required />
               CID
             </label>
             <label className="send_title">
@@ -191,29 +173,31 @@ export const AddNewProduct = () => {
               Лінк на відео
             </label>
             <label className="send_title">
-              <input type="text" name="myprice" className="send_input" />
+              <input
+                type="number"
+                name="myprice"
+                className="send_input"
+                required
+              />
               Ціна оптова
             </label>
             <label className="send_title">
-              <input type="text" name="price" className="send_input" />
+              <input
+                type="number"
+                name="price"
+                className="send_input"
+                required
+              />
               Ціна роздрібна
             </label>
             <label className="send_title">
-              <input
-                type="text"
-                name="top"
-                className="send_input"
-                defaultValue={'Ні'}
-                list={'boolean'}
-              />
-              В топі?
+              <input type="checkbox" name="top" className="send_input" />В топі?
             </label>
             <label className="send_title">
               <input
-                type="text"
+                type="checkbox"
                 name="inStock"
-                list={'boolean'}
-                defaultValue={'Так'}
+                defaultChecked
                 className="send_input"
               />
               В наявності?
