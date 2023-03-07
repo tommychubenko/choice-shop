@@ -3,6 +3,7 @@ import { useSelector } from 'react-redux';
 import { useParams } from 'react-router';
 
 import AddchartIcon from '@mui/icons-material/Addchart';
+import { AddTask } from '@mui/icons-material';
 
 export const Components = () => {
   const [product, setProduct] = useState();
@@ -21,7 +22,7 @@ export const Components = () => {
         {product &&
           product[0]?.components.map((component, index) => (
             <li className="components_item" key={index}>
-              <AddchartIcon className="global-color" /> {component}
+              <AddTask className="global-color" /> {component}
             </li>
           ))}
       </ul>

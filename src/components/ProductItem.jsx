@@ -10,38 +10,42 @@ export const ProductItem = ({ product }) => {
   const location = useLocation();
   const dispath = useDispatch();
   const basket = useSelector(store => store.basket);
-  const reviews = useSelector(store => store.reviews)
-  const reviewsForThisProduct = reviews?.filter(review => review?.cid === product?.cid)
+  const reviews = useSelector(store => store.reviews);
+  const reviewsForThisProduct = reviews?.filter(
+    review => review?.cid === product?.cid
+  );
   const checkThatInTheCart = id => basket.some(product => product.cid === id);
 
-  const rating = reviewsForThisProduct?.reduce((acc, review) => {
-    acc += review?.rating;
-    return acc 
-  }, 0)/ reviews?.length;
+
+  const rating =
+    reviewsForThisProduct?.reduce((acc, review) => {
+      acc += review?.rating;
+      return acc;
+    }, 0) / reviews?.length;
+
+
 
   return (
     <div className="card">
       <Link
-        to={`/products/${product.cid}`}
+        to={`/products/${product.cid}/about`}
         state={{ from: location }}
         className="card_link"
       >
         <img
-          src={product.bigImg}
+          src={`https://firebasestorage.googleapis.com/v0/b/choice-ab93a.appspot.com/o/products%2F${product.cid}.webp?alt=media&token=936ccefd-3d44-4e51-8067-1891ffdf610a`}     
           alt={product.product}
           className="card_image"
           loading="lazy"
         />
       </Link>
       <div className="card_footer-block">
-        
-        <Link to={`/products/${product.cid}`} state={{ from: location }}>
+        <Link to={`/products/${product.cid}/about`} state={{ from: location }}>
           <p className="card_title">{product.product}</p>
         </Link>
-       
 
-        <div className="card_footer-price-block">       
-          <Rating value={rating} precision={0.5} readOnly size="small" />     
+        <div className="card_footer-price-block">
+          <Rating value={rating} precision={0.5} readOnly size="small" />
           <p className="card_price">Ціна {product.price} грн</p>
 
           {checkThatInTheCart(product.cid) && (

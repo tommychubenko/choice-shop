@@ -4,24 +4,18 @@
     // gap: 10px;
     // width: 100%;
 
-    @media screen and (min-width: $mobile){   
+    @media screen and (min-width: $mobile) {}
 
-}
+    @media screen and (min-width: $tablet) {}
 
-@media screen and (min-width: $tablet){   
+    @media screen and (min-width: $pc) {
+        display: flex;
+        justify-content: space-between;
+        gap: 10px;
+        width: 100%;
+    }
 
-}
-
-@media screen and (min-width: $pc){
-    display: flex;
-    justify-content: space-between;
-    gap: 10px;
-    width: 100%;
-}
-
-@media screen and (min-width: $big-pc){   
-
-}
+    @media screen and (min-width: $big-pc) {}
 
 
 
@@ -39,16 +33,52 @@
         }
 
         @media screen and (min-width: $tablet) {
-            justify-content: unset;        
+            justify-content: unset;
             width: 610px;
         }
 
-        @media screen and (min-width: $pc) {  
+        @media screen and (min-width: $pc) {
             margin: unset;
-            width: 920px;}
+            width: 920px;
+        }
 
         @media screen and (min-width: $big-pc) {}
 
 
     }
+}
+
+.freedelivery {
+    &_pc {
+        display: none;
+        width: 920px;
+        border-radius: 5px;
+
+        @media screen and (min-width: $pc) {
+            display: block;
+        }
+    }
+
+    &_tablet{
+        display: none;
+        @media screen and (min-width: $tablet) {
+            display: block;
+            width: 610px;
+            border-radius: 5px;
+        }
+        @media screen and (min-width: $pc) {
+            display: none
+        }
+    }
+
+    &_mobile {
+        display: block;
+        width: 300px;
+        border-radius: 5px;
+        @media screen and (min-width: $tablet) {
+            display: none;
+          
+        }
+    }
+
 }

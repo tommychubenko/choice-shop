@@ -2,27 +2,36 @@ import { ProductItem } from './ProductItem';
 import { useSelector } from 'react-redux';
 import { Filter } from './Filter';
 import npfreead from '../images/ad-np-001.jpg';
+import freeDeliveryPC from '../images/free-delivery-pc.png';
+import freeDeliveryTABLET from '../images/free-delivery-tablet.png';
+import freeDeliveryMOBILE from '../images/free-delivery-mobile.png';
 
 export const MainPage = () => {
   const allProducts = useSelector(state => state.products);
   const findWord = useSelector(state => state.find);
   const selectedBrands = useSelector(state => state.filter.brands);
   const selectedGroups = useSelector(state => state.filter.groups);
+  const selectedUsage = useSelector(state => state.filter.usage);
+  const selectedProgram = useSelector(state => state.filter.program);
+
   const minPrice = useSelector(state => state.filter.minprice);
   const maxPrice = useSelector(state => state.filter.maxprice);
 
-  const topSellersAndAds = () => {
-    let finalRender = [...allProducts].filter(product => product.top).map(product => (
-      <ProductItem product={product} key={product.cid} />
-    ));  
-    
+  // const topSellersAndAds = () => {
 
-    return (
-      <>     
-       {finalRender}
-      </>
-    );
-  };
+  //   let finalRender = [...allProducts].filter(product => product.top).map(product => (
+  //     <ProductItem product={product} key={product.cid} />
+  //   ));
+
+  //   return (
+  //     <>
+  //     <img className='freedelivery_pc' src={freeDeliveryPC} alt="безкоштовна доставка"/>
+  //     <img className='freedelivery_tablet' src={freeDeliveryTABLET} alt="безкоштовна доставка"/>
+  //     <img className='freedelivery_mobile' src={freeDeliveryMOBILE} alt="безкоштовна доставка"/>
+  //     {finalRender}
+  //     </>
+  //   );
+  // };
 
   const renderProducts = () => {
     let finalRender = [...allProducts];
@@ -44,6 +53,18 @@ export const MainPage = () => {
       );
     }
 
+    if (selectedUsage.length > 0) {
+      finalRender = finalRender.filter(
+        product => selectedUsage === product.zastosuvannya
+      );
+    }
+
+    if (selectedProgram.length > 0) {
+
+    finalRender =  finalRender.filter(product => product?.programma.includes(selectedProgram)) 
+    
+    }
+
     if (minPrice > 0) {
       finalRender = finalRender.filter(product => product.price > minPrice);
     }
@@ -62,10 +83,31 @@ export const MainPage = () => {
       findWord === '' &&
       selectedBrands.length === 0 &&
       selectedGroups.length === 0 &&
+      selectedProgram.length === 0 &&
+      selectedUsage.length === 0 &&
       minPrice === 0 &&
       maxPrice === 0
     ) {
-      return topSellersAndAds();
+      return (
+        <>
+          <img
+            className="freedelivery_pc"
+            src={freeDeliveryPC}
+            alt="безкоштовна доставка"
+          />
+          <img
+            className="freedelivery_tablet"
+            src={freeDeliveryTABLET}
+            alt="безкоштовна доставка"
+          />
+          <img
+            className="freedelivery_mobile"
+            src={freeDeliveryMOBILE}
+            alt="безкоштовна доставка"
+          />
+          {finalRender}
+        </>
+      );
     }
 
     if (finalRender.length === 0) {
@@ -77,7 +119,9 @@ export const MainPage = () => {
 
   return (
     <div className="main-page">
-      <div className='filter_pc'><Filter /></div>
+      <div className="filter_pc">
+        <Filter />
+      </div>
       <div className="main-page_markup">{renderProducts()}</div>
     </div>
   );

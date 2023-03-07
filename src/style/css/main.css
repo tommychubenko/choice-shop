@@ -1,5 +1,6 @@
 @import url("https://fonts.googleapis.com/css2?family=Raleway:wght@100;200;300;500;800&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;500;700;900&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@100;200;300;400;500;600;700;800&display=swap");
 @font-face {
   font-family: "Blooming Elegant";
   src: url("../../data/fonts/BloomingElegant.otf") format("opentype");
@@ -91,7 +92,7 @@ div {
 }
 
 .appbar {
-  height: 100px;
+  height: 150px;
   width: 100vw;
   top: 0;
   left: 0;
@@ -100,6 +101,8 @@ div {
   background: linear-gradient(0deg, rgb(38, 77, 50) 0%, rgb(19, 50, 29) 90%);
   position: fixed;
   display: flex;
+  flex-direction: column;
+  gap: 15px;
   align-items: center;
   justify-content: center;
   z-index: 100;
@@ -109,6 +112,21 @@ div {
   align-items: center;
   justify-content: center;
   gap: 15px;
+}
+
+.logo {
+  font-family: "Montserrat", sans-serif;
+  font-weight: 400;
+  text-decoration: none;
+  color: #fff;
+  font-size: 30px;
+}
+.logo_text {
+  font-family: "Montserrat", sans-serif;
+  color: #264d32;
+  background-color: #fff;
+  border-radius: 5px;
+  padding: 5px;
 }
 
 .toolbar {
@@ -265,6 +283,42 @@ div {
     width: 920px;
   }
 }
+.freedelivery_pc {
+  display: none;
+  width: 920px;
+  border-radius: 5px;
+}
+@media screen and (min-width: 1199.98px) {
+  .freedelivery_pc {
+    display: block;
+  }
+}
+.freedelivery_tablet {
+  display: none;
+}
+@media screen and (min-width: 767.98px) {
+  .freedelivery_tablet {
+    display: block;
+    width: 610px;
+    border-radius: 5px;
+  }
+}
+@media screen and (min-width: 1199.98px) {
+  .freedelivery_tablet {
+    display: none;
+  }
+}
+.freedelivery_mobile {
+  display: block;
+  width: 300px;
+  border-radius: 5px;
+}
+@media screen and (min-width: 767.98px) {
+  .freedelivery_mobile {
+    display: none;
+  }
+}
+
 .card {
   width: 300px;
   height: 400px;
@@ -511,6 +565,26 @@ div {
   padding: 5px;
   width: 300px;
 }
+.filter_contacts-wrapper {
+  margin-bottom: 20px;
+  background-color: #fff;
+  border-radius: 5px;
+  padding: 10px;
+}
+.filter_contacts-list {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+.filter_contacts-link {
+  text-decoration: none;
+  font-weight: 500;
+  font-size: 20px;
+  color: #264d32;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
 .filter_pc {
   display: none;
 }
@@ -532,6 +606,9 @@ div {
   color: #FFFFFF;
   font-weight: 400;
   margin-bottom: 15px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
 }
 .filter_label {
   font-size: 16px;
@@ -947,10 +1024,12 @@ div {
 }
 .order_data-summary {
   font-size: 16px;
+  margin-top: 10px;
   display: flex;
-  align-items: center;
   height: 50px;
   color: #264d32;
+  flex-direction: column;
+  gap: 5px;
 }
 .order_delivery-type1-wrapper {
   display: flex;
@@ -1021,6 +1100,7 @@ div {
   position: absolute;
   top: 70px;
   left: 0;
+  background-color: #fff;
 }
 .order_delivery-choose-result-variant-wrapper {
   display: flex;
@@ -1048,6 +1128,24 @@ div {
   border-radius: 5px;
   font-size: 20px;
   cursor: pointer;
+}
+.order_done-title {
+  margin-bottom: 15px;
+  text-align: center;
+}
+@media screen and (min-width: 767.98px) {
+  .order_done-title {
+    text-align: unset;
+  }
+}
+.order_done-summary {
+  margin-bottom: 15px;
+}
+.order_done-card {
+  margin-bottom: 15px;
+}
+.order_done-card-link {
+  margin-bottom: 15px;
 }
 .order_done-wrapper {
   background-color: #FFF;
@@ -1118,8 +1216,7 @@ div {
 }
 
 .mobileMenu {
-  height: 100%;
-  padding: 20px 5px;
+  padding: 20px 10px;
   background-color: #264d32;
 }
 @media screen and (min-width: 1199.98px) {

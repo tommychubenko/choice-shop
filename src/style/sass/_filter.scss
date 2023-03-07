@@ -1,5 +1,32 @@
 .filter {
 
+    &_contacts{
+
+        &-wrapper{
+            margin-bottom: 20px;
+            background-color: #fff;
+            border-radius: 5px;
+            padding: 10px;
+        }
+
+        &-list{
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+        }
+
+            &-link{
+            text-decoration: none;
+            font-weight: 500;
+            font-size: 20px;
+            // color: #ffffff;
+            color: $main-color;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+    }
+
 
     &_pc {
         display: none;
@@ -28,6 +55,9 @@
         color: #FFFFFF;
         font-weight: 400;
         margin-bottom: 15px;
+        display: flex;
+        align-items: center;
+        gap: 10px;
 
     }
 

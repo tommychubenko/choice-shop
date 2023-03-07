@@ -178,10 +178,14 @@
         &-summary {
             font-size: 16px;
             // text-align: right;
+            margin-top: 10px;
             display: flex;
-            align-items: center;
+            // align-items: center;
             height: 50px;
             color: $main-color;
+            // display: flex;
+            flex-direction: column;
+            gap: 5px;
 
             // justify-content: right;
         }
@@ -278,10 +282,11 @@
                 position: absolute;
                 top: 70px;
                 left: 0;
-                // background-color: tomato;
+                background-color: #fff;
 
                 &-variant{
                     &-wrapper {
+                       
                         display: flex;
                         align-items: center;
                         gap: 5px;
@@ -321,11 +326,32 @@
 
     &_done{
 
+        &-title{
+            margin-bottom: 15px;
+            text-align: center;
+            @media screen and (min-width: $tablet){   
+                text-align: unset;
+            }
+
+        }
+
+        &-summary {
+            margin-bottom: 15px;
+        }
+
+        &-card{
+            margin-bottom: 15px;
+            &-link{
+                margin-bottom: 15px;
+            }
+        }
+
         &-wrapper{
             background-color: #FFF;
             // width: 200px;
             padding: 20px;
             border-radius: 5px;
+        
             @media screen and (min-width: $tablet){   
                 width: unset;
             }

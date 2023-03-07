@@ -1,5 +1,5 @@
 .appbar { 
-    height: 100px;
+    height: 150px;
     width: 100vw;
     top: 0;
     left: 0;
@@ -8,6 +8,8 @@
     background: linear-gradient(0deg, rgba(38,77,50,1) 0%, rgba(19,50,29,1) 90%);
     position: fixed;
     display: flex;
+    flex-direction: column;
+    gap: 15px;
     align-items: center;
     justify-content: center;
     z-index: 100;
@@ -22,6 +24,21 @@
         align-items: center;
         justify-content: center;
         gap: 15px;
+    }
+}
+.logo{
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 400;
+    text-decoration: none;
+    color: #fff;
+    font-size: 30px;
+
+    &_text{
+        font-family: 'Montserrat', sans-serif;
+        color: $main-color;
+        background-color: #fff;
+        border-radius: 5px;
+        padding: 5px;
     }
 }
 

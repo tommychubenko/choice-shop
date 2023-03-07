@@ -3,9 +3,10 @@ import { useDispatch, useSelector } from 'react-redux';
 import { Outlet, useLocation, useNavigate, useParams } from 'react-router';
 import { BackBtn, OutletLink } from './App.styled';
 import DoubleArrowIcon from '@mui/icons-material/DoubleArrow';
+import { Helmet } from 'react-helmet';
 
 import CheckCircleOutlineIcon from '@mui/icons-material/CheckCircleOutline';
-import { handleAddToCart } from 'redux/slices';
+import { handleAddToCart, selectedPrograms, selectedUsage } from 'redux/slices';
 import { Reviews } from './pages/Reviews';
 
 export const ProductPage = () => {
@@ -16,6 +17,8 @@ export const ProductPage = () => {
   const savedNavigate = useRef(location.state?.from);
   const navigate = useNavigate();
   const dispatch = useDispatch();
+
+  const thisURL = `http://https://ekoshop.org.ua/products/${id}`
 
   useEffect(() => {
     const product = allProducts.filter(product => +product.cid === +id);
@@ -30,6 +33,12 @@ export const ProductPage = () => {
   const checkThatInTheCart = id => basket.some(product => product.cid === id);
   return (
     <>
+      <Helmet>
+        <meta charSet="utf-8" />
+        <title>{`Купити ${product?.product} від офіційного партнерського онлайн магазину - Choice - White Mandarin - Добра їжа - Green Max `}</title>
+        <meta name="description" content="Тут ви можете купити оригінальну продукцію від офіційного партнерського онлайн магазину брендів CHOICE WHITE MANDARINE ДОБРА ЇЖА, GREEN MAX " />        
+        <link rel="canonical" href={thisURL} />
+      </Helmet>
       {product && (
         <div className="productCard">
           {/* <BackBtn to={savedNavigate.current ?? 'xxx'}> */}
@@ -38,7 +47,7 @@ export const ProductPage = () => {
           <div className="productCard_info">
             <img
               className="productCard_info-image"
-              src={product?.bigImg}
+              src={`https://firebasestorage.googleapis.com/v0/b/choice-ab93a.appspot.com/o/products%2F${product.cid}.webp?alt=media&token=936ccefd-3d44-4e51-8067-1891ffdf610a`} 
               alt=""
             />
             <div className="productCard_info-wrapper">
@@ -67,9 +76,9 @@ export const ProductPage = () => {
               {product?.zastosuvannya && (
                 <>
                   <p className="productCard_info-usage">застосування: </p>
-                  <a href="/" className="productCard_info-usage-link">
+                  <p className="productCard_info-usage-link" onClick={()=>{dispatch(selectedUsage(product?.zastosuvannya))}}>
                     {product?.zastosuvannya}
-                  </a>
+                  </p>
                 </>
               )}
 
@@ -77,18 +86,18 @@ export const ProductPage = () => {
                 <div className="productCard_info-program-wrapper">
                   <p className="productCard_info-program">програма: </p>
                   {typeof product?.programma === 'string' ? (
-                    <a href="/" className="productCard_info-program-link">
+                    <a className="productCard_info-program-link" onClick={()=>{dispatch(selectedPrograms(product?.programma))}} >
                       {product?.programma}{' '}
                     </a>
                   ) : (
                     product?.programma.map((prog, index) => (
-                      <a
-                        key={index}
-                        href="/"
+                      <p
+                        key={index}                        
                         className="productCard_info-program-link"
+                        onClick={()=>{dispatch(selectedPrograms(prog))}}
                       >
                         {prog}
-                      </a>
+                      </p>
                     ))
                   )}
                 </div>
@@ -109,8 +118,8 @@ export const ProductPage = () => {
             </div>
           </div>
           <div className="productCard_info-reviews-mobileandtablet">
-              <Reviews id={id} />
-            </div>
+            <Reviews id={id} />
+          </div>
           <div className="productCard_btnlist">
             {product?.about !== '' && product?.about && (
               <OutletLink to="about">Опис</OutletLink>
@@ -124,8 +133,9 @@ export const ProductPage = () => {
             {product?.usage !== '' && product?.usage && (
               <OutletLink to="usage">Використання</OutletLink>
             )}
-            <OutletLink to="addreview" 
-            // state={{ id: id }}
+            <OutletLink
+              to="addreview"
+              // state={{ id: id }}
             >
               Додати відгук про товар
             </OutletLink>

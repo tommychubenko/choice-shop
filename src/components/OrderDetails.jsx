@@ -74,7 +74,7 @@ export const OrderDetails = ({ back }) => {
     addNewOrderToFireStore({
       myid : orderId,
       contact: contact,
-      uid: user?.uid,
+      uid: user?.uid ?? contact?.tel,
       products: productsInBasket,    
       date: orderId,
       payed: false
@@ -347,7 +347,7 @@ export const OrderDetails = ({ back }) => {
                 <li key={item.cid} className="order_data-item">
                   <p className="order_data-count">{index + 1}</p>
                   <img
-                    src={item.bigImg}
+                    src={`https://firebasestorage.googleapis.com/v0/b/choice-ab93a.appspot.com/o/products%2F${item?.cid}.webp?alt=media&token=936ccefd-3d44-4e51-8067-1891ffdf610a`} 
                     alt="logo"
                     className="order_data-image"
                   />{' '}
@@ -371,8 +371,9 @@ export const OrderDetails = ({ back }) => {
                 </li>
               ))}
 
-              <li key="totalPrice" className="order_data-summary">
+              <li className="order_data-summary">
                 <p>{'Всього ' + totalPrice + ' грн'}</p>
+                <p>{totalPrice > 500 && prepayment ? <> Вартість доставки: <b> БЕЗКОШТОВНО</b></>: <>Вартість доставки відповідно до тарифів Нової пошти</>}</p>
               </li>
             </ul>
           </div>
@@ -560,32 +561,32 @@ export const OrderDetails = ({ back }) => {
 
       {orderHasDone && (
         <div className="order_done-wrapper">
-          <h2>Замовлення № {orderId} готується. </h2>
-          <p>
+          <h2 className='order_done-title'>Ваше замовлення № {orderId} - вже комплектується. </h2>
+          <p className='order_done-summary'>
             Його вартість складає <b>{memoizedValue} грн. 00 коп </b>
-          </p><br />
+          </p>
 
           {prepayment ? (
             <>
               {' '}
-              <p>Оплатити можна на картку Моно 5375 4115 0610 4301 - отримувач Артем Ч. 
-              </p><p>Також, можна оплатити <a href={monoCardHref} target="_blank">через сайт Monobank
-                </a></p><br />
+              <p  className='order_done-card'>Оплатити можна на картку Моно 5375 4115 0610 4301 - отримувач Артем Ч. </p>
+              <p  className='order_done-card-link'>Також, можна оплатити <a href={monoCardHref} target="_blank">через сайт Monobank
+                </a></p>
             </>
           ) : (
-            <p>
+            <p  className='order_done-afterpayment'>
               Замовлення буде відправлене Вам наложеним платежем після дзвінка
               менеджера.
             </p>
           )}
 
           {user ? (
-            <p>
+            <p  className='order_done-checkdetails'>
               Перевірити статус свого замовлення ви завжди можете{' '}
               <Link to="/auth/userpage">у себе в кабінеті</Link>
             </p>
           ) : (
-            <p>
+            <p className='order_done-checkdetails'>
               Радимо Вам <Link to="/auth">увійти</Link> або{' '}
               <Link to="/register">зареєструватися</Link> на нашому сайті, щоб
               отримувати всі переваги зареєстрованих користувачів

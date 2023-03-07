@@ -1,5 +1,5 @@
 import {createSlice } from '@reduxjs/toolkit';
-import { filterByBrand, setMinPrice, setMaxPrice, filterByGroup, setToBasket, plusToBasket, minusToBasket, deleteFromBasket } from './operations';
+import { filterByBrand, setMinPrice, setMaxPrice, filterByGroup, setToBasket, plusToBasket, minusToBasket, deleteFromBasket, filterByProgram, filterByUsage } from './operations';
 
 export const user = createSlice({
   name: 'User', 
@@ -44,8 +44,15 @@ export const allProducts = createSlice({
   
   export const filter = createSlice({
     name: 'Filter',
-    initialState: { brands: "",groups: "", minprice: 0, maxprice: 0  },
+    initialState: { brands: "", groups: "", minprice: 0, maxprice: 0, program: "", usage: ''   },
     reducers: {
+      selectedPrograms(state, action){    
+        filterByProgram(state, action)
+      },
+      selectedUsage(state, action){
+        filterByUsage(state, action)
+      },
+
       selectedBrands(state, action) {
         filterByBrand(state, action)
       },
@@ -90,5 +97,5 @@ export const {setUserData} = user.actions
 export const {setAllReviews} = reviews.actions
 export const { setAllProductsToState} = allProducts.actions;
 export const { handleFind } = find.actions;
-export const { selectedBrands, selectedGroups, handleSetMinPrice, handleSetMaxPrice } = filter.actions;
+export const { selectedBrands, selectedGroups, handleSetMinPrice, handleSetMaxPrice, selectedPrograms, selectedUsage } = filter.actions;
 export const { handleAddToCart, handleIncrement, handleDecrement,handleDelete, deleteAll, handleAddAllToBasket } = basket.actions;

@@ -1,11 +1,30 @@
 export const filterByBrand = (state, action) => {
   state.brands = action.payload;
   state.groups = '';
+  state.program = '';
+  state.usage = '';
 };
+
 
 export const filterByGroup = (state, action) => {
   state.brands = '';
+  state.program = '';
+  state.usage = '';
   state.groups = action.payload;
+};
+
+export const filterByProgram = (state, action) => {
+  state.brands = '';
+  state.groups = '';
+  state.usage = '';
+  state.program = action.payload;
+};
+
+export const filterByUsage = (state, action) => {
+  state.brands = '';
+  state.groups = '';
+  state.program = '';
+  state.usage = action.payload;
 };
 
 export const setMinPrice = (state, action) => {
