@@ -18,7 +18,7 @@
     &_input {
         border: 1px $main-color solid;
         margin-right: 20px;
-   
+
     }
 
     &_client {
@@ -53,7 +53,7 @@
 
             &-wrapper {
                 margin-bottom: 20px;
-                
+
 
 
                 &-ids {
@@ -61,7 +61,8 @@
                     flex-direction: column;
                     gap: 15px;
                     margin-bottom: 20px;
-                    @media screen and (min-width: $tablet){   
+
+                    @media screen and (min-width: $tablet) {
                         flex-direction: unset;
                     }
 
@@ -72,7 +73,8 @@
             &-input {
                 border: 1px $main-color solid;
                 // margin-left: 15px;
-                width: 350px;
+                // width: 350px;
+                width: 100%;
                 border-radius: 5px;
                 font-size: 16px;
                 height: 30px;
@@ -92,6 +94,16 @@
     }
 
     &_data {
+
+
+        &-thumb {
+
+            @media screen and (min-width: $tablet) {
+                display: flex;
+
+            }
+        }
+
         &-title {
             color: $main-color;
             font-size: 18px;
@@ -105,18 +117,25 @@
         &-item {
             display: flex;
             align-items: center;
-            gap: 5px;
+            // align-items: end;
+            gap: 10px;
             // justify-content: space-around;
             // background-color: tomato;
             padding: 5px 0;
             border-bottom: 1px $main-grey solid;
-            @media screen and (min-width: $tablet){   
+
+            @media screen and (min-width: $tablet) {
                 gap: 45px;
+                align-items: center;
             }
         }
 
         &-name {
-            flex-basis: 25%;
+            width: 60%;
+
+            @media screen and (min-width: $tablet) {
+                width: 25%;
+            }
         }
 
         &-count {
@@ -135,7 +154,8 @@
 
         &-image {
             display: none;
-            @media screen and (min-width: $tablet){   
+
+            @media screen and (min-width: $tablet) {
                 display: block;
                 width: 100px;
             }
@@ -149,7 +169,7 @@
                 // justify-content: center;
                 align-items: center;
                 gap: 5px;
-                
+
             }
 
             &-label {
@@ -209,8 +229,14 @@
             &-method {
                 &-wrapper {
                     display: flex;
-                    gap: 10px;
+                    flex-direction: column;
+                    gap: 25px;
                     margin-bottom: 15px;
+
+                    @media screen and (min-width: $tablet) {
+                        flex-direction: unset;
+                        gap: 15px;
+                    }
                 }
             }
 
@@ -244,7 +270,8 @@
             display: flex;
             flex-direction: column;
             gap: 20px;
-            @media screen and (min-width: $tablet){   
+
+            @media screen and (min-width: $tablet) {
                 flex-direction: unset;
 
             }
@@ -254,10 +281,12 @@
                 flex-direction: column;
                 position: relative;
                 min-height: 100px;
-                @media screen and (min-width: $tablet){   
+
+                @media screen and (min-width: $tablet) {
                     min-height: 150px;
-    
+
                 }
+
                 // border: 1px tomato solid;
             }
 
@@ -269,7 +298,7 @@
             &-input {
 
                 border: 1px #008000 solid;
-                width: 350px;
+                // width: 350px;
                 font-size: 16px;
                 height: 30px;
                 padding: 7px;
@@ -284,35 +313,37 @@
                 left: 0;
                 background-color: #fff;
 
-                &-variant{
+                &-variant {
                     &-wrapper {
-                       
+
                         display: flex;
                         align-items: center;
                         gap: 5px;
                         cursor: pointer;
-                        width: 350px;
+                        // width: 350px;
                     }
+
                     &-title {
                         color: inherit;
                     }
 
-                 &-image {
-                    width: 20px;
-                    height: 20px;
-                 }
+                    &-image {
+                        width: 20px;
+                        height: 20px;
+                    }
 
-                 
+
                 }
             }
         }
-        &-summary{
-            &-wrapper{
-                display: flex;            
+
+        &-summary {
+            &-wrapper {
+                display: flex;
                 padding: 20px 0;
             }
 
-            &-button{
+            &-button {
                 width: 200px;
                 height: 50px;
                 background-color: $main-color;
@@ -321,15 +352,16 @@
                 font-size: 20px;
                 cursor: pointer;
             }
-         }
+        }
     }
 
-    &_done{
+    &_done {
 
-        &-title{
+        &-title {
             margin-bottom: 15px;
             text-align: center;
-            @media screen and (min-width: $tablet){   
+
+            @media screen and (min-width: $tablet) {
                 text-align: unset;
             }
 
@@ -339,24 +371,26 @@
             margin-bottom: 15px;
         }
 
-        &-card{
+        &-card {
             margin-bottom: 15px;
-            &-link{
+
+            &-link {
                 margin-bottom: 15px;
             }
         }
 
-        &-wrapper{
+        &-wrapper {
             background-color: #FFF;
             // width: 200px;
             padding: 20px;
             border-radius: 5px;
-        
-            @media screen and (min-width: $tablet){   
+
+            @media screen and (min-width: $tablet) {
                 width: unset;
             }
         }
-        &-btn{
+
+        &-btn {
             width: 250px;
             height: 50px;
             background-color: $main-color;

@@ -18,10 +18,10 @@ export const Usage = () => {
     },[allProducts, id])
     return product && (
     typeof product[0].usage !== 'string' ? 
-    <ul className="usage_list"> {product[0]?.usage.map((usage, index) => <li className="usage_item" key={index}><AddchartIcon htmlColor="#008000"/>{usage}</li>) }</ul>
+    <ul className="usage_list"> {product[0]?.usage.map((usage, index) => <li className="usage_item" key={index}><AddchartIcon className="global-color"/>{usage}</li>) }</ul>
   
     : 
-    <p className="usage_item"><AddchartIcon htmlColor="#008000"/> {product[0]?.usage}</p> 
+    <p className="usage_item"><AddchartIcon className="global-color"/> {product[0]?.usage}</p> 
     
   )
 }

@@ -1,9 +1,9 @@
 .appbar { 
-    height: 150px;
+    // height: 120px;
     width: 100vw;
     top: 0;
     left: 0;
-    padding: 0 30px;
+    padding: 10px 30px;
     background: $main-color;
     background: linear-gradient(0deg, rgba(38,77,50,1) 0%, rgba(19,50,29,1) 90%);
     position: fixed;
@@ -13,6 +13,7 @@
     align-items: center;
     justify-content: center;
     z-index: 100;
+  
    
 
     // @media screen and (min-width: $big-pc){
@@ -34,20 +35,44 @@
     font-size: 30px;
 
     &_text{
-        font-family: 'Montserrat', sans-serif;
-        color: $main-color;
-        background-color: #fff;
-        border-radius: 5px;
-        padding: 5px;
+        font-family: 'Montserrat', sans-serif;   
+        color: #fff;
+        font-size: 8px;
+        text-align: center;
+        margin-bottom: 10px;
+        @media screen and (min-width: $tablet) {     
+            font-size: 11px;  
+        }
+    
+        @media screen and (min-width: $pc) {
+            font-size: 12px;
+        }
+
     }
 }
 
 .toolbar{
-    width: 100vw;
-    max-width: 1240px;
+    min-width: 320px;
     display: flex;
     align-items: center;
     justify-content: space-between;
+    padding: 0 10px;
+    @media screen and (min-width: $mobile){   
+        width: 480px;
+    }
+    
+    @media screen and (min-width: $tablet){   
+        width: 768px;
+    }
+    
+    @media screen and (min-width: $pc){
+        width: 1240px;
+    }
+    
+    @media screen and (min-width: $big-pc){   
+    
+    }
+   
 
 }
 

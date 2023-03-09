@@ -1,7 +1,7 @@
 export const Footer = () => {
   return (
     <div className="footer">
-     111
+    <a href="http://leffberg.com" target={"_blank"} className="footer_madeBy">Створено студією Leffberg </a>
     </div>
   );
 };

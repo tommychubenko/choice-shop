@@ -1,19 +1,13 @@
 .mobileMenu {
-    // height: 100%;
+    // height: 120%;
     padding: 20px 10px;
-
     background-color: $main-color;
-
-
-
 
 
     &_icon {
         @media screen and (min-width: $mobile) {}
 
-        @media screen and (min-width: $tablet) {
-        
-        }
+        @media screen and (min-width: $tablet) {}
 
         @media screen and (min-width: $pc) {
             display: none;

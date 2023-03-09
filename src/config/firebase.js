@@ -24,3 +24,5 @@ export const googleProvider = new GoogleAuthProvider()
 
 export const db = getFirestore(app)
 export const storage = getStorage(app)
+
+export const firebaseImg = (cid) => `https://firebasestorage.googleapis.com/v0/b/choice-ab93a.appspot.com/o/products%2F${cid}.webp?alt=media&token=936ccefd-3d44-4e51-8067-1891ffdf610a`

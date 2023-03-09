@@ -13,14 +13,16 @@ import { db } from 'config/firebase';
 import { Notify } from 'notiflix';
 import { useSelector } from 'react-redux';
 import { months } from 'components/admin/libruary';
-import {useNavigate } from 'react-router';
+import { useLocation, useNavigate } from 'react-router';
 import { monoCardHref } from 'components/admin/adminFunctions';
+import { Link } from 'react-router-dom';
 
 export const UserPage = () => {
   const [userOrders, setUserOrders] = useState([]);
   const user = useSelector(state => JSON.parse(state.user));
   const ordersRef = collection(db, 'orders');
   const navigate = useNavigate();
+  const location = useLocation();
 
   function timeConverter(UNIX_timestamp) {
     const a = new Date(UNIX_timestamp * 1000);
@@ -54,6 +56,16 @@ export const UserPage = () => {
     getAllOrdersFromFireStore();
   }, []);
 
+  let w = window.innerWidth;
+
+  // console.log(w);
+
+  const totalPrice = products =>
+    products.reduce((acc, product) => {
+      acc += +product.price * +product.amount;
+      return acc;
+    }, 0);
+
   return (
     <div className="userpage">
       <h2 className="userpage_title">Ваші замовлення</h2>
@@ -63,14 +75,12 @@ export const UserPage = () => {
       )}
 
       {userOrders.length > 0 &&
-        userOrders.map(({ products, id, date, payed }) => (
+        userOrders.map(({ products, id, date, payed, ttn }) => (
           <Accordion key={id}>
             <AccordionSummary expandIcon={<ExpandMoreIcon />}>
-              {' '}
               <p>
-                {' '}
-                Замовлення № {date} від {timeConverter(date)}
-              </p>{' '}
+                <b> №{date}</b>
+              </p>
               {payed ? (
                 <p style={{ color: 'green', marginLeft: 'auto' }}> Оплачено</p>
               ) : (
@@ -78,25 +88,35 @@ export const UserPage = () => {
               )}
             </AccordionSummary>
             <AccordionDetails>
+              <p style={{ marginBottom: '10px', display: 'block' }}>
+                {' '}
+                Від {timeConverter(date)}
+              </p>
+              {ttn ? <p>Номер ТТН: {ttn}</p>: <p style={{marginBottom: '10px'}}>Товар ще не був відправлений</p>}
+
               <ButtonGroup
-            //   classes='global-color'
+                //   classes='global-color'
                 variant="outlined"
                 aria-label="outlined primary button group"
-                style={{marginBottom: "20px"}}
+                style={{ marginBottom: '20px' }}
               >
-               <Button onClick={()=> window.open(monoCardHref, "_blank")}>Оплатити</Button>
+                {!payed && (
+                  <Button onClick={() => window.open(monoCardHref, '_blank')}>
+                    Оплатити
+                  </Button>
+                )}
                 {/* <Button>Two</Button>
                 <Button>Three</Button> */}
               </ButtonGroup>
-
+             
 
               <table className="userpage_order-list">
                 <thead>
                   <tr>
                     <th>№</th>
                     <th>Назва</th>
-                    <th>Кількість</th>
-                    <th>Вартість</th>
+                    {w >= 768 ? <th>Штук</th>: <th>Шт</th>}
+                    {w >= 768 ? <th>Вартість</th>: <th>В-ть</th>}
                     <th>Всього</th>
                   </tr>
                 </thead>
@@ -104,12 +124,30 @@ export const UserPage = () => {
                   {products.map(({ product, amount, price, cid }, index) => (
                     <tr key={cid}>
                       <td>{index + 1}</td>
-                      <td>{product}</td>
+                      <td>
+                        <Link
+                          to={`/products/${cid}`}
+                          state={{ from: location }}
+                        >
+                          {w >= 768 ? product : product.slice(0, 12) + '...'}
+
+                     
+                        </Link>
+                      </td>
                       <td>{amount}</td>
                       <td>{price}</td>
                       <td>{price * amount}</td>
                     </tr>
                   ))}
+                  <tr>
+                    <td></td>
+                    <td>
+                      <b>ВСЬОГО</b>
+                    </td>
+                    <td></td>
+                    <td></td>
+                    <td>{totalPrice(products)}</td>
+                  </tr>
                 </tbody>
               </table>
               {/* <ul>{products.map(product => <li key={product?.cid}>{product?.product} {product?.amount + 'шт'} </li>)}</ul> */}

@@ -90,21 +90,10 @@ export const MainPage = () => {
     ) {
       return (
         <>
-          <img
-            className="freedelivery_pc"
-            src={freeDeliveryPC}
-            alt="безкоштовна доставка"
-          />
-          <img
-            className="freedelivery_tablet"
-            src={freeDeliveryTABLET}
-            alt="безкоштовна доставка"
-          />
-          <img
-            className="freedelivery_mobile"
-            src={freeDeliveryMOBILE}
-            alt="безкоштовна доставка"
-          />
+          <div className="discount_freeDelivery">
+            <p>АКЦІЯ! <br/>
+            Доставка передплачених замовлень від 500 грн до відділення Нової Пошти - БЕЗКОШТОВНЕ</p>
+          </div>
           {finalRender}
         </>
       );

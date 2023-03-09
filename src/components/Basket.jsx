@@ -13,6 +13,7 @@ import {useState } from 'react';
 import { OrderDetails } from './OrderDetails';
 import { useNavigate } from 'react-router';
 import { Backdrop } from '@mui/material';
+import { firebaseImg } from 'config/firebase';
 
 export const Basket = () => {
   // const [purchaised, setPurchaised] = useState(false);
@@ -84,7 +85,7 @@ export const Basket = () => {
               <ul className="basket_list">
                 {productsInBasket.map(product => (
                   <li key={product.cid} className="basket_item">
-                    <img src={`https://firebasestorage.googleapis.com/v0/b/choice-ab93a.appspot.com/o/products%2F${product?.cid}.webp?alt=media&token=936ccefd-3d44-4e51-8067-1891ffdf610a`}  alt="" className="basket_image" />
+                    <img src={firebaseImg(product?.cid)}  alt="" className="basket_image" />
                     <p className="basket_title">{product.product}</p>
                     <p className="basket_price">{product.price + ' грн'}</p>
                     <div className="basket_amount-manage">

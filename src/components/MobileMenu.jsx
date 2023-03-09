@@ -3,6 +3,8 @@ import Drawer from '@mui/material/Drawer';
 import MenuIcon from '@mui/icons-material/Menu';
 import { Filter } from './Filter';
 
+
+
 export const MobileMenu = () => {
   const [state, setState] = React.useState({
     top: false,
@@ -44,6 +46,9 @@ export const MobileMenu = () => {
             anchor={anchor}
             open={state[anchor]}
             onClose={toggleDrawer(anchor, false)}
+            // className='global-color'
+            // htmlColor='tomato'
+          
           >
             {list(anchor)}
           </Drawer>

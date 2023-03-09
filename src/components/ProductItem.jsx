@@ -5,6 +5,7 @@ import AddShoppingCartIcon from '@mui/icons-material/AddShoppingCart';
 import { handleAddToCart } from 'redux/slices';
 import { useDispatch, useSelector } from 'react-redux';
 import { Rating } from '@mui/material';
+import { firebaseImg } from 'config/firebase';
 
 export const ProductItem = ({ product }) => {
   const location = useLocation();
@@ -21,8 +22,9 @@ export const ProductItem = ({ product }) => {
     reviewsForThisProduct?.reduce((acc, review) => {
       acc += review?.rating;
       return acc;
-    }, 0) / reviews?.length;
+    }, 0) / reviewsForThisProduct?.length;
 
+  
 
 
   return (
@@ -33,7 +35,7 @@ export const ProductItem = ({ product }) => {
         className="card_link"
       >
         <img
-          src={`https://firebasestorage.googleapis.com/v0/b/choice-ab93a.appspot.com/o/products%2F${product.cid}.webp?alt=media&token=936ccefd-3d44-4e51-8067-1891ffdf610a`}     
+          src={firebaseImg(product?.cid)}     
           alt={product.product}
           className="card_image"
           loading="lazy"

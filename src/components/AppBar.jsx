@@ -21,10 +21,9 @@ import { getDocs, collection } from 'firebase/firestore';
 import { Block, Loading, Notify } from 'notiflix';
 import blankUser from '../images/blank-user.png';
 import { MobileMenu } from './MobileMenu';
-import { listAll, list, ref, getDownloadURL } from 'firebase/storage';
+
 
 export const AppBar = ({ products }) => {
-  const [imageURL, setImageURL] = useState('');
 
   const productsInBasket = useSelector(state => state.basket);
   const user = useSelector(state => JSON.parse(state.user));
@@ -33,16 +32,6 @@ export const AppBar = ({ products }) => {
 
   const productsRef = collection(db, 'products');
   const reviewsRef = collection(db, 'reviews');
-  // const imagesRef = ref(storage, `products/`)
-
-  // useEffect(()=>{
-
-  //   listAll(imagesRef).then(r => r.items.forEach(item => {getDownloadURL(item)}).then(url => {setImageURL(url)})).catch(e => console.log(e.message))
-
-  //   // console.log(imagesRef);
-  //   // listAll(imagesRef).then((r )=> {r.items.forEach(item => {getDownloadURL(item)})})
-
-  // }, [])
 
   useEffect(() => {
     const observer = onAuthStateChanged(auth, user => {
@@ -73,18 +62,22 @@ export const AppBar = ({ products }) => {
 
   async function getAllProductsFromFireStore() {
     try {
-      Loading.standard();
+      Loading.dots();
       const data = await getDocs(productsRef);
+      // Block.standard('.main-page', 'Please wait...', {
+      //   backgroundColor: 'rgba(0,0,0,0.1)',
+      //   });
       // Block.standard('.main-page_markup');
       const filtredData = data.docs.map(doc => ({
         ...doc.data(),
         id: doc.id,
       }));
       dispatch(setAllProductsToState(filtredData));
-      // Block.remove('.main-page_markup');
+      // Block.remove('.main-page');
       Loading.remove();
     } catch (error) {
       Notify.failure('Не зміг завантажити продукти');
+      // Block.remove('.main-page');
       Loading.remove();
     }
   }
@@ -105,9 +98,14 @@ export const AppBar = ({ products }) => {
   return (
     <div>
       <div className="appbar">
-        <div className="toolbar">
+      <p className="logo_text">
+          Офіційний магазин-партнер торгових марок CHOICE PHYTO, Green Max,
+          White Mandarin, BIOX, PRO HEALTHY, Добра Їжа
+        </p>
+       {/* <div className="container"> */}
+       <div className="toolbar">
           <a href="/" className="logo">
-            ECO SHOP
+           ecoshop
           </a>
 
           <Find products={products} className=" find" />
@@ -137,10 +135,8 @@ export const AppBar = ({ products }) => {
             <MobileMenu />
           </div>
         </div>
-        <p className='logo_text'>Офіційний магазин-партнер торгових марок CHOICE PHYTO, Green Max, White Mandarin, BIOX, PRO HEALTHY, Добра Їжа
-
-
-</p>
+       {/* </div> */}
+       
       </div>
     </div>
   );

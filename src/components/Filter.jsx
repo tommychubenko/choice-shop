@@ -61,9 +61,8 @@ export const Filter = () => {
     <div className="filter_contacts-wrapper">
       <ul className='filter_contacts-list'>
         <li className="filter_contacts-item"><a href="tel:380950201222" className='filter_contacts-link'><PhoneIphone/>+38 (095) 020-12-22</a></li>
-        <li className="filter_contacts-item"><a className='filter_contacts-link'><LocationOn />м.Полтава, ТРЦ Мир</a></li>
-        {/* <li className="filter_contacts-item"></li>
-        <li className="filter_contacts-item"></li> */}
+        <li className="filter_contacts-item"><a className='filter_contacts-link'><LocationOn />м.Полтава, ТРЦ Мир</a></li>    
+        {/* <li className="filter_contacts-item"></li> */}
 
       </ul>
     </div>

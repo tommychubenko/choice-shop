@@ -18,6 +18,7 @@
     &_title {
         font-size: 16px;
         font-weight: 500;
+        
         // font-family: 'Roboto', sans-serif;
 
     }
@@ -72,18 +73,38 @@
  
 
     &_title {
-        font-size: 30px;
+        font-size: 20px;
         color: $main-color;
         margin-top: 25px;
         margin-bottom: 25px;
+        @media screen and (min-width: $mobile){   
+
+        }
+        
+        @media screen and (min-width: $tablet){   
+            font-size: 25px;
+        }
+        
+        @media screen and (min-width: $pc){
+            font-size: 30px;
+        }
+        
+        @media screen and (min-width: $big-pc){   
+        
+        }
     }
 
     &_info {
         display: flex;
         flex-direction: column;
-        gap: 10px;
+        gap: 50px;
         margin-bottom: 50px;
         width: 100%;
+        @media screen and (min-width: $tablet){
+            flex-direction: unset;
+            gap: 10px;
+
+        }
 
         &-wrapper {
             width: 100%;
@@ -91,10 +112,7 @@
                 width: 33%;
             }
                     }
-        @media screen and (min-width: $tablet){
-            flex-direction: unset;
-
-        }
+       
 
         &-reviews {
             width: 390px;
@@ -109,7 +127,7 @@
 
             &-mobileandtablet{
 
-                margin-bottom: 20px;
+                margin-bottom: 30px;
                 @media screen and (min-width: $pc) {
                     display: none;
                 }
@@ -241,8 +259,12 @@ font-size: 16px;
                 display: flex;
                 align-items: center;
                 // justify-content: space-around;
+                justify-content: center;
                 gap: 10px;
                 margin-bottom: 20px;
+                @media screen and (min-width: $tablet){   
+                    justify-content: unset;
+                }
             }
 
 
@@ -256,16 +278,20 @@ font-size: 16px;
 
     &_outlet {
         padding: 20px 0;
+        width: 100%;       
+        
     }
 
     &_btnlist {
-        
+        display: flex;
+        flex-wrap: wrap;
         align-items: center;
-        justify-content: center;
-        gap: 15px;
+        // justify-content: center;
+        gap: 5px;
         margin-bottom: 15px;
         @media screen and (min-width: $tablet){   
             display: flex;
+            gap: 15px;
         }
         
     }

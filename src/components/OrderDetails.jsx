@@ -9,6 +9,8 @@ import { deleteAll } from 'redux/slices';
 import { useNavigate } from 'react-router';
 import { addNewOrderToFireStore, monoCardHref } from './admin/adminFunctions';
 import { Link } from 'react-router-dom';
+import { height } from '@mui/system';
+import { firebaseImg } from 'config/firebase';
 
 export const OrderDetails = ({ back }) => {
   const TOKEN = process.env.REACT_APP_TG_TOKEN;
@@ -347,11 +349,12 @@ export const OrderDetails = ({ back }) => {
                 <li key={item.cid} className="order_data-item">
                   <p className="order_data-count">{index + 1}</p>
                   <img
-                    src={`https://firebasestorage.googleapis.com/v0/b/choice-ab93a.appspot.com/o/products%2F${item?.cid}.webp?alt=media&token=936ccefd-3d44-4e51-8067-1891ffdf610a`} 
+                    src={firebaseImg(item.cid)} 
                     alt="logo"
                     className="order_data-image"
                   />{' '}
                   <p className="order_data-name">{item.product}</p>
+                  <div className="order_data-thumb">
                   <div className="order_data-price-wrapper">
                     <p className="order_data-price-label">ціна</p>
                     <p className="order_data-price-count">
@@ -367,6 +370,7 @@ export const OrderDetails = ({ back }) => {
                     <p className="order_data-price-count">
                       {item.amount * item.price + ' грн'}
                     </p>
+                  </div>
                   </div>
                 </li>
               ))}
@@ -435,7 +439,7 @@ export const OrderDetails = ({ back }) => {
               )}
 
               {selectedCity && (
-                <div className="order_delivery-choose-result-variant-wrapper">
+                <div className="order_delivery-choose-result-variant-wrapper" >
                   <img
                     src={nplogo}
                     alt="logo"
@@ -453,7 +457,7 @@ export const OrderDetails = ({ back }) => {
                 </div>
               )}
 
-              {/* ВІДДІЛЕННЯ */}
+           {/* ВІДДІЛЕННЯ */}
 
               <div className="order_delivery-choose-result">
                 {citiesList?.length > 0 &&
@@ -569,7 +573,7 @@ export const OrderDetails = ({ back }) => {
           {prepayment ? (
             <>
               {' '}
-              <p  className='order_done-card'>Оплатити можна на картку Моно 5375 4115 0610 4301 - отримувач Артем Ч. </p>
+              <p  className='order_done-card'>Оплатити можна на картку Моно <b>5375 4115 0610 4301</b> - отримувач Артем Ч. </p>
               <p  className='order_done-card-link'>Також, можна оплатити <a href={monoCardHref} target="_blank">через сайт Monobank
                 </a></p>
             </>
