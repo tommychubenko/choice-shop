@@ -1,24 +1,31 @@
-.discount{
+.discount {
 
-&_freeDelivery {
-    background-color: #fff;
-    // height: 78px;
-    width: 300px;
-    padding: 10px;
-    border-radius: 5px;
-    color: $main-color;
-    font-weight: 400;
-    font-size: 18px;
-    text-align: center;
-    @media screen and (min-width: $tablet){   
-width: 610px;
-    }
-    
-    @media screen and (min-width: $pc){
-    width: 920px;
-    }
+    &_freeDelivery {
+        background-color: #fff;
+        // height: 78px;
+        width: 300px;
+        padding: 10px;
+        border-radius: 5px;
+        color: $main-color;
+        font-weight: 400;
+        font-size: 18px;
+        text-align: center;
 
-}
+
+//   @media screen and (min-width: $mobile) {
+//             width: 300px;
+//         }
+
+
+        @media screen and (min-width: $tablet) {
+            width: 610px;
+        }
+
+        @media screen and (min-width: $pc) {
+            width: 920px;
+        }
+
+    }
 
 
 

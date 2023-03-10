@@ -91,6 +91,10 @@ div {
   padding: 0;
 }
 
+.css-1160xiw-MuiPaper-root-MuiDrawer-paper {
+  background-color: #264d32 !important;
+}
+
 .appbar {
   width: 100vw;
   top: 0;
@@ -629,7 +633,7 @@ div {
 .filter_contacts-link {
   text-decoration: none;
   font-weight: 500;
-  font-size: 20px;
+  font-size: 18px;
   color: #264d32;
   display: flex;
   align-items: center;

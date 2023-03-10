@@ -34,20 +34,22 @@ export const MobileMenu = () => {
   );
 
   return (
-    <div className="mobileMenu_icon">
+    <div className="mobileMenu_icon" >
       {['right'].map(anchor => (
-        <React.Fragment key={anchor}>
+        <React.Fragment key={anchor} >
           <MenuIcon
             htmlColor="#fff"
             fontSize="large"
             onClick={toggleDrawer(anchor, true)}
           />
           <Drawer
+
             anchor={anchor}
             open={state[anchor]}
             onClose={toggleDrawer(anchor, false)}
             // className='global-color'
             // htmlColor='tomato'
+            
           
           >
             {list(anchor)}

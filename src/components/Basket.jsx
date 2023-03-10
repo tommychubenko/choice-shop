@@ -13,7 +13,8 @@ import {useState } from 'react';
 import { OrderDetails } from './OrderDetails';
 import { useNavigate } from 'react-router';
 import { Backdrop } from '@mui/material';
-import { firebaseImg } from 'config/firebase';
+import { analytics, firebaseImg } from 'config/firebase';
+import { logEvent } from 'firebase/analytics';
 
 export const Basket = () => {
   // const [purchaised, setPurchaised] = useState(false);
@@ -33,6 +34,8 @@ export const Basket = () => {
   // const turnStateFalse = () => {
   //   setPurchaised(false);
   // };
+
+  logEvent(analytics, 'G-RY5Q0HMS3W');
 
   return (
     <>
