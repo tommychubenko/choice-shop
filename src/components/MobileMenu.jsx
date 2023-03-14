@@ -28,8 +28,12 @@ export const MobileMenu = () => {
     <div
       className="mobileMenu"
       onClick={toggleDrawer(anchor, false)}
-      onKeyDown={toggleDrawer(anchor, false)}>
-      <Filter />
+      onKeyDown={toggleDrawer(anchor, false)}
+      >
+      <Filter place = {'mobile'} onClose = {()=>{
+        // toggleDrawer(anchor, false)
+
+        }}   />
     </div>
   );
 
@@ -43,7 +47,7 @@ export const MobileMenu = () => {
             onClick={toggleDrawer(anchor, true)}
           />
           <Drawer
-
+          // className='global-color'
             anchor={anchor}
             open={state[anchor]}
             onClose={toggleDrawer(anchor, false)}

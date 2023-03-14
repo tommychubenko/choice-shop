@@ -19,7 +19,7 @@ import {
 } from 'redux/slices';
 import { MobileMenu } from './MobileMenu';
 
-export const Filter = () => {
+export const Filter = ({place}) => {
   const allProducts = useSelector(state => state.products);
   const dispatch = useDispatch();
 
@@ -67,7 +67,7 @@ export const Filter = () => {
       </ul>
     </div>
 
-      <div className="filter">
+      <nav className="filter">
         <p className="filter_title">
           
           <AutoAwesome /> Вибір за брендом
@@ -83,12 +83,12 @@ export const Filter = () => {
                   navigate('/');
                 }}
               >
-                <label className="filter_label" htmlFor={brands.indexOf(brand)}>
+                <label className="filter_label" htmlFor={brand + place}>
                   <input
                     className="filter_checkbox"
                     type="radio"
                     name="brand"
-                    id={brands.indexOf(brand)}
+                    id={brand  + place}
                     onClick={() => {
                       dispatch(selectedBrands(brand));
                     }}
@@ -110,9 +110,12 @@ export const Filter = () => {
                             name={group}
                             id={group}
                             className="filter_group-input"
-                            onClick={() => {
-                              dispatch(selectedGroups(group));
-                            }}
+                            onClick={
+                              () => {                            
+                              dispatch(selectedGroups(group))
+                            }
+                          }
+                           
                           />
                           <label htmlFor={group} className="filter_group-label">
                             {group}
@@ -214,7 +217,7 @@ export const Filter = () => {
             </div>
           </form>
         </div>
-      </div>
+      </nav>
     </>
   );
 };

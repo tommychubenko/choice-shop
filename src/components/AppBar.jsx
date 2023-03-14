@@ -1,4 +1,5 @@
 import logo2 from '../images/logo2.png';
+import SearchIcon from '@mui/icons-material/Search';
 import AddShoppingCartRoundedIcon from '@mui/icons-material/AddShoppingCartRounded';
 import AccountCircleRoundedIcon from '@mui/icons-material/AccountCircleRounded';
 import { Badge } from '@mui/material';
@@ -62,7 +63,7 @@ export const AppBar = ({ products }) => {
 
   async function getAllProductsFromFireStore() {
     try {
-      Loading.dots();
+      // Loading.dots();
       const data = await getDocs(productsRef);
       // Block.standard('.main-page', 'Please wait...', {
       //   backgroundColor: 'rgba(0,0,0,0.1)',
@@ -74,11 +75,11 @@ export const AppBar = ({ products }) => {
       }));
       dispatch(setAllProductsToState(filtredData));
       // Block.remove('.main-page');
-      Loading.remove();
+      // Loading.remove();
     } catch (error) {
       Notify.failure('Не зміг завантажити продукти');
       // Block.remove('.main-page');
-      Loading.remove();
+      // Loading.remove();
     }
   }
 
@@ -105,10 +106,11 @@ export const AppBar = ({ products }) => {
        {/* <div className="container"> */}
        <div className="toolbar">
           <a href="/" className="logo">
-           ecoshop
+          <h1 className="logo">ecoshop</h1>
           </a>
 
           <Find products={products} className=" find" />
+         <SearchIcon fontSize='large' htmlColor="#FFFFFF" className='searchIcon'/>
           <div className="appbar_menu">
             <Badge badgeContent={amountinBasket} color="warning">
               <Link to="basket">

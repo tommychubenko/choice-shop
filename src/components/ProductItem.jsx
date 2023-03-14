@@ -43,11 +43,11 @@ export const ProductItem = ({ product }) => {
       </Link>
       <div className="card_footer-block">
         <Link to={`/products/${product.cid}/about`} state={{ from: location }}>
-          <p className="card_title">{product.product}</p>
+          <h2 className="card_title">{product.product}</h2>
         </Link>
 
         <div className="card_footer-price-block">
-          <Rating value={rating} precision={0.5} readOnly size="small" />
+         {rating > 1 && <Rating value={rating} precision={0.5} readOnly size="small" />}
           <p className="card_price">Ціна {product.price} грн</p>
 
           {checkThatInTheCart(product.cid) && (

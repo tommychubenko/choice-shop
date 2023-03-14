@@ -44,7 +44,7 @@ export const ProductPage = () => {
         <div className="productCard">
           {/* <BackBtn to={savedNavigate.current ?? 'xxx'}> */}
           <OutletLink to={savedNavigate.current ?? '/'}>Назад</OutletLink>
-          <p className="productCard_title">{product?.product}</p>
+          <h1 className="productCard_title">{product?.product}</h1>
           <div className="productCard_info">
             <img
               className="productCard_info-image"

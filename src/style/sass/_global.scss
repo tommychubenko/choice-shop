@@ -40,7 +40,7 @@ $standart-transition-style: cubic-bezier(0.4, 0, 0.2, 1);
 
 $mobile: 479.98 + px;
 $tablet: 767.98 + px;
-$pc: 1199.98 + px;
+$pc: 1249.98 + px;
 $big-pc: 1919.98 + px;
 
 // Colors
@@ -78,8 +78,8 @@ ul {
 //   }
 
 .global-color{
-    color: $main-color;
-    fill: $main-color
+    color: $main-color !important;
+    fill: $main-color !important;
 }
 
 .container {
@@ -124,18 +124,19 @@ div{
 background-color: #264d32 !important;
 }
 
-@media screen and (min-width: $mobile){   
 
-}
+// @media screen and (min-width: $mobile){   
 
-@media screen and (min-width: $tablet){   
+// }
 
-}
+// @media screen and (min-width: $tablet){   
 
-@media screen and (min-width: $pc){
+// }
 
-}
+// @media screen and (min-width: $pc){
 
-@media screen and (min-width: $big-pc){   
+// }
 
-}
+// @media screen and (min-width: $big-pc){   
+
+// }

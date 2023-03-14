@@ -5,6 +5,7 @@ import npfreead from '../images/ad-np-001.jpg';
 import freeDeliveryPC from '../images/free-delivery-pc.png';
 import freeDeliveryTABLET from '../images/free-delivery-tablet.png';
 import freeDeliveryMOBILE from '../images/free-delivery-mobile.png';
+import { Skeleton } from '@mui/material';
 
 export const MainPage = () => {
   const allProducts = useSelector(state => state.products);
@@ -17,21 +18,33 @@ export const MainPage = () => {
   const minPrice = useSelector(state => state.filter.minprice);
   const maxPrice = useSelector(state => state.filter.maxprice);
 
-  // const topSellersAndAds = () => {
+  const renderSkeleton = () => {
+    return (<><Skeleton variant="rectangular" animation='pulse' width={300} height={400} /><Skeleton variant="rectangular" animation='pulse' width={300} height={400} /><Skeleton variant="rectangular" animation='pulse' width={300} height={400} /></>)
+  };
 
-  //   let finalRender = [...allProducts].filter(product => product.top).map(product => (
-  //     <ProductItem product={product} key={product.cid} />
-  //   ));
+  const renderFreeDevivety = () => 
+  <div className="discount_freeDelivery">
+   <p>
+     АКЦІЯ! <br />
+     Доставка передплачених замовлень від 500 грн до відділення Нової
+     Пошти - БЕЗКОШТОВНЕ
+   </p>
+ </div>
 
-  //   return (
-  //     <>
-  //     <img className='freedelivery_pc' src={freeDeliveryPC} alt="безкоштовна доставка"/>
-  //     <img className='freedelivery_tablet' src={freeDeliveryTABLET} alt="безкоштовна доставка"/>
-  //     <img className='freedelivery_mobile' src={freeDeliveryMOBILE} alt="безкоштовна доставка"/>
-  //     {finalRender}
-  //     </>
-  //   );
-  // };
+
+  const topSellersAndAds = () => {
+
+    let finalRender = [...allProducts].filter(product => product.top).map(product => (
+      <ProductItem product={product} key={product.cid} />
+    ));
+
+    return (
+      <>
+      {renderFreeDevivety()}
+      {finalRender}
+      </>
+    );
+  };
 
   const renderProducts = () => {
     let finalRender = [...allProducts];
@@ -60,9 +73,9 @@ export const MainPage = () => {
     }
 
     if (selectedProgram.length > 0) {
-
-    finalRender =  finalRender.filter(product => product?.programma.includes(selectedProgram)) 
-    
+      finalRender = finalRender.filter(product =>
+        product?.programma.includes(selectedProgram)
+      );
     }
 
     if (minPrice > 0) {
@@ -90,11 +103,9 @@ export const MainPage = () => {
     ) {
       return (
         <>
-          <div className="discount_freeDelivery">
-            <p>АКЦІЯ! <br/>
-            Доставка передплачених замовлень від 500 грн до відділення Нової Пошти - БЕЗКОШТОВНЕ</p>
-          </div>
+          {/* {topSellersAndAds()} */}
           {finalRender}
+        
         </>
       );
     }
@@ -106,12 +117,25 @@ export const MainPage = () => {
     return finalRender;
   };
 
+  // const createSiteMap = () => {
+  //   const r = allProducts.map(item =>`<url><loc>https://eco-shop.org.ua/products/${item?.cid}</loc><lastmod>2023-03-10T17:54:28+00:00</lastmod></url>`).join('')
+  //   console.dir(r);
+  // }
+
+  // createSiteMap()
+
   return (
     <div className="main-page">
       <div className="filter_pc">
-        <Filter />
+        <Filter place={'mainpage'}/>
       </div>
-      <div className="main-page_markup">{renderProducts()}</div>
+      <div className="main-page_markup">
+        {allProducts.length > 0 ? (
+          renderProducts()
+        ) : (
+         renderSkeleton()
+        )}
+      </div>
     </div>
   );
 };

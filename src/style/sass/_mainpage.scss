@@ -22,27 +22,32 @@
     &_markup {
 
         display: flex;
+        width: 100%;
         // width: 920px;
+        height: 100%;
         justify-content: center;
         gap: 10px;
         flex-wrap: wrap;
 
         @media screen and (min-width: $mobile) {
-            width: 300px;
-            margin: 0 auto;
+            // width: 300px;
+            // margin: 0 auto;
         }
 
         @media screen and (min-width: $tablet) {
-            justify-content: unset;
-            width: 610px;
+            // justify-content: unset;
+            // width: 610px;
         }
 
         @media screen and (min-width: $pc) {
-            margin: unset;
-            width: 920px;
+            justify-content: center;
+            // margin: unset;
+            // width: 920px;
         }
 
-        @media screen and (min-width: $big-pc) {}
+        @media screen and (min-width: $big-pc) {
+            justify-content: unset;
+        }
 
 
     }
