@@ -46,7 +46,7 @@ export const Register = () => {
       sx={{ zIndex: theme => theme.zIndex.drawer + 1 }}
       open={true}
       onClick={e => {
-        e.currentTarget === e.target && navigate(-1);
+        e.currentTarget === e.target && navigate('/');
       }}
     >
       <div className="auth login_wrapper">

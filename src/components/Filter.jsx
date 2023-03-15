@@ -60,7 +60,7 @@ export const Filter = ({place}) => {
 
     <div className="filter_contacts-wrapper">
       <ul className='filter_contacts-list'>
-        <li className="filter_contacts-item"><a href="tel:380950201222" className='filter_contacts-link'><PhoneIphone/>+38 (095) 020-12-22</a></li>
+        <li className="filter_contacts-item"><a href="tel:380950201222" className='filter_contacts-link'><PhoneIphone />+38 (095) 020-12-22</a></li>
         <li className="filter_contacts-item"><a className='filter_contacts-link'><LocationOn />м.Полтава, ТРЦ Мир</a></li>    
         {/* <li className="filter_contacts-item"></li> */}
 
@@ -70,7 +70,7 @@ export const Filter = ({place}) => {
       <nav className="filter">
         <p className="filter_title">
           
-          <AutoAwesome /> Вибір за брендом
+          <AutoAwesome htmlColor='yellow' /> Вибір за брендом
         </p>
 
         {brands && (
@@ -131,7 +131,7 @@ export const Filter = ({place}) => {
 
         <div className="filter_program">
           <p className="filter_title">
-            <InsertComment /> Вибір за програмою
+            <InsertComment htmlColor='yellow'  /> Вибір за програмою
           </p>
           <ul className="filter_brand">
             {programs.map((prog, index) => (
@@ -155,7 +155,7 @@ export const Filter = ({place}) => {
 
         <div className="filter_usage">
           <p className="filter_title">
-            <Handyman /> Вибір по застосуванню
+            <Handyman htmlColor='yellow' /> Вибір по застосуванню
           </p>
           <ul className="filter_brand">
             {usage.map((prog, index) => (

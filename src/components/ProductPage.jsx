@@ -6,7 +6,7 @@ import DoubleArrowIcon from '@mui/icons-material/DoubleArrow';
 import { Helmet } from 'react-helmet';
 
 import CheckCircleOutlineIcon from '@mui/icons-material/CheckCircleOutline';
-import { handleAddToCart, selectedPrograms, selectedUsage } from 'redux/slices';
+import { handleAddToCart, handleFind, selectedBrands, selectedGroups, selectedPrograms, selectedUsage } from 'redux/slices';
 import { Reviews } from './pages/Reviews';
 import { firebaseImg } from 'config/firebase';
 
@@ -19,7 +19,19 @@ export const ProductPage = () => {
   const navigate = useNavigate();
   const dispatch = useDispatch();
 
-  const thisURL = `http://https://ekoshop.org.ua/products/${id}`
+  const onClickBrand = () => {
+    dispatch(selectedBrands(product?.subbrand));
+    dispatch(handleFind(''))
+    navigate('/')
+  }
+
+  const onClickGroups = () => {
+    dispatch(selectedGroups(product?.group))
+    dispatch(handleFind(''))
+    navigate('/')
+  }
+
+  const thisURL = `http://https://ekoshop.org.ua/products/${id}`;
 
   useEffect(() => {
     const product = allProducts.filter(product => +product.cid === +id);
@@ -37,18 +49,22 @@ export const ProductPage = () => {
       <Helmet>
         <meta charSet="utf-8" />
         <title>{`Купити ${product?.product} від офіційного партнерського онлайн магазину - Choice - White Mandarin - Добра їжа - Green Max `}</title>
-        <meta name="description" content="Тут ви можете купити оригінальну продукцію від офіційного партнерського онлайн магазину брендів CHOICE WHITE MANDARINE ДОБРА ЇЖА, GREEN MAX " />        
+        <meta
+          name="description"
+          content="Тут ви можете купити оригінальну продукцію від офіційного партнерського онлайн магазину брендів CHOICE WHITE MANDARINE ДОБРА ЇЖА, GREEN MAX "
+        />
         <link rel="canonical" href={thisURL} />
       </Helmet>
       {product && (
         <div className="productCard">
           {/* <BackBtn to={savedNavigate.current ?? 'xxx'}> */}
           <OutletLink to={savedNavigate.current ?? '/'}>Назад</OutletLink>
+          <p className="productCard_breadcrumbs-wrapper"><p className="productCard_breadcrumbs" onClick={onClickBrand}> {product?.subbrand}</p> / <p className="productCard_breadcrumbs" onClick={onClickGroups}>{product?.group}</p></p>
           <h1 className="productCard_title">{product?.product}</h1>
           <div className="productCard_info">
             <img
               className="productCard_info-image"
-              src={firebaseImg(product?.cid)} 
+              src={firebaseImg(product?.cid)}
               alt=""
             />
             <div className="productCard_info-wrapper">
@@ -77,7 +93,12 @@ export const ProductPage = () => {
               {product?.zastosuvannya && (
                 <>
                   <p className="productCard_info-usage">застосування: </p>
-                  <p className="productCard_info-usage-link" onClick={()=>{dispatch(selectedUsage(product?.zastosuvannya))}}>
+                  <p
+                    className="productCard_info-usage-link"
+                    onClick={() => {
+                      dispatch(selectedUsage(product?.zastosuvannya));
+                    }}
+                  >
                     {product?.zastosuvannya}
                   </p>
                 </>
@@ -87,15 +108,22 @@ export const ProductPage = () => {
                 <div className="productCard_info-program-wrapper">
                   <p className="productCard_info-program">програма: </p>
                   {typeof product?.programma === 'string' ? (
-                    <a className="productCard_info-program-link" onClick={()=>{dispatch(selectedPrograms(product?.programma))}} >
+                    <a
+                      className="productCard_info-program-link"
+                      onClick={() => {
+                        dispatch(selectedPrograms(product?.programma));
+                      }}
+                    >
                       {product?.programma}{' '}
                     </a>
                   ) : (
                     product?.programma.map((prog, index) => (
                       <p
-                        key={index}                        
+                        key={index}
                         className="productCard_info-program-link"
-                        onClick={()=>{dispatch(selectedPrograms(prog))}}
+                        onClick={() => {
+                          dispatch(selectedPrograms(prog));
+                        }}
                       >
                         {prog}
                       </p>

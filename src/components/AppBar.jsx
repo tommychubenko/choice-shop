@@ -2,6 +2,7 @@ import logo2 from '../images/logo2.png';
 import SearchIcon from '@mui/icons-material/Search';
 import AddShoppingCartRoundedIcon from '@mui/icons-material/AddShoppingCartRounded';
 import AccountCircleRoundedIcon from '@mui/icons-material/AccountCircleRounded';
+import NotInterestedIcon from '@mui/icons-material/NotInterested';
 import { Badge } from '@mui/material';
 import { Find } from './Find';
 import { useDispatch, useSelector } from 'react-redux';
@@ -23,9 +24,9 @@ import { Block, Loading, Notify } from 'notiflix';
 import blankUser from '../images/blank-user.png';
 import { MobileMenu } from './MobileMenu';
 
-
-export const AppBar = ({ products }) => {
-
+export const AppBar = () => {
+  const [mobileSearch, setMobileSearch] = useState(false);
+  var viewport_width = window.innerWidth;
   const productsInBasket = useSelector(state => state.basket);
   const user = useSelector(state => JSON.parse(state.user));
   const amountinBasket = Object.keys(productsInBasket).length;
@@ -99,46 +100,71 @@ export const AppBar = ({ products }) => {
   return (
     <div>
       <div className="appbar">
-      <p className="logo_text">
+        <p className="logo_text">
           Офіційний магазин-партнер торгових марок CHOICE PHYTO, Green Max,
           White Mandarin, BIOX, PRO HEALTHY, Добра Їжа
-        </p>
-       {/* <div className="container"> */}
-       <div className="toolbar">
-          <a href="/" className="logo">
-          <h1 className="logo">ecoshop</h1>
-          </a>
-
-          <Find products={products} className=" find" />
-         <SearchIcon fontSize='large' htmlColor="#FFFFFF" className='searchIcon'/>
-          <div className="appbar_menu">
-            <Badge badgeContent={amountinBasket} color="warning">
-              <Link to="basket">
-                <AddShoppingCartRoundedIcon
-                  htmlColor="#FFFFFF"
-                  fontSize="large"
-                  className="basketBtn"
-                />
-              </Link>
-            </Badge>
-            <Link to={'auth'}>
-              {user ? (
-                <Avatar
-                  alt={user?.displayName}
-                  src={user?.photoURL ?? blankUser}
-                />
-              ) : (
-                <AccountCircleRoundedIcon
-                  htmlColor="#FFFFFF"
-                  fontSize="large"
-                />
-              )}
-            </Link>
-            <MobileMenu />
+        </p>      
+        {/* <div className="container"> */}
+        {mobileSearch ? (
+          <div className="find_mobile">
+            <Find />{' '}
+            <div className="find_close">
+              <NotInterestedIcon
+                htmlColor="#ffffff"
+                fontSize="large"
+                style={{ cursor: 'pointer' }}
+                onClick={() => {
+                  setMobileSearch(false);
+                }}
+              />
+            </div>
           </div>
-        </div>
-       {/* </div> */}
-       
+        ) : (
+          <div className="toolbar">
+            <a href="/" className="logo">
+              <h1 className="logo">ecoshop</h1>
+              {/* {window.innerWidth} */}
+            </a>
+
+            <div className="find">
+              <Find />
+            </div>
+            <SearchIcon
+              fontSize="large"
+              htmlColor="#FFFFFF"
+              className="searchIcon"
+              onClick={() => {
+                setMobileSearch(true);
+              }}
+            />
+            <div className="appbar_menu">
+              <Badge badgeContent={amountinBasket} color="warning">
+                <Link to="basket">
+                  <AddShoppingCartRoundedIcon
+                    htmlColor="#FFFFFF"
+                    fontSize="large"
+                    className="basketBtn"
+                  />
+                </Link>
+              </Badge>
+              <Link to={'auth'}>
+                {user ? (
+                  <Avatar
+                    alt={user?.displayName}
+                    src={user?.photoURL ?? blankUser}
+                  />
+                ) : (
+                  <AccountCircleRoundedIcon
+                    htmlColor="#FFFFFF"
+                    fontSize="large"
+                  />
+                )}
+              </Link>
+              <MobileMenu />
+            </div>
+          </div>
+        )}
+        {/* </div> */}
       </div>
     </div>
   );

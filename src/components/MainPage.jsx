@@ -6,6 +6,7 @@ import freeDeliveryPC from '../images/free-delivery-pc.png';
 import freeDeliveryTABLET from '../images/free-delivery-tablet.png';
 import freeDeliveryMOBILE from '../images/free-delivery-mobile.png';
 import { Skeleton } from '@mui/material';
+import { IndexPage } from './pages/IndexPage';
 
 export const MainPage = () => {
   const allProducts = useSelector(state => state.products);
@@ -19,29 +20,67 @@ export const MainPage = () => {
   const maxPrice = useSelector(state => state.filter.maxprice);
 
   const renderSkeleton = () => {
-    return (<><Skeleton variant="rectangular" animation='pulse' width={300} height={400} /><Skeleton variant="rectangular" animation='pulse' width={300} height={400} /><Skeleton variant="rectangular" animation='pulse' width={300} height={400} /></>)
+    return (
+      <>
+        <Skeleton
+          variant="rectangular"
+          animation="pulse"
+          width={300}
+          height={400}
+        />
+        <Skeleton
+          variant="rectangular"
+          animation="pulse"
+          width={300}
+          height={400}
+        />
+        <Skeleton
+          variant="rectangular"
+          animation="pulse"
+          width={300}
+          height={400}
+        />
+        <Skeleton
+          variant="rectangular"
+          animation="pulse"
+          width={300}
+          height={400}
+        />
+        <Skeleton
+          variant="rectangular"
+          animation="pulse"
+          width={300}
+          height={400}
+        />
+        <Skeleton
+          variant="rectangular"
+          animation="pulse"
+          width={300}
+          height={400}
+        />
+      </>
+    );
   };
 
-  const renderFreeDevivety = () => 
-  <div className="discount_freeDelivery">
-   <p>
-     АКЦІЯ! <br />
-     Доставка передплачених замовлень від 500 грн до відділення Нової
-     Пошти - БЕЗКОШТОВНЕ
-   </p>
- </div>
-
+  const renderFreeDevivety = () => (
+    <div className="discount_freeDelivery">
+      <p>
+        АКЦІЯ! <br />
+        Доставка передплачених замовлень від 500 грн до відділення Нової Пошти -
+        БЕЗКОШТОВНЕ
+      </p>
+    </div>
+  );
 
   const topSellersAndAds = () => {
-
-    let finalRender = [...allProducts].filter(product => product.top).map(product => (
-      <ProductItem product={product} key={product.cid} />
-    ));
+    let finalRender = [...allProducts]
+      .filter(product => product.top)
+      .map(product => <ProductItem product={product} key={product.cid} />);
 
     return (
       <>
-      {renderFreeDevivety()}
-      {finalRender}
+        {renderFreeDevivety()}
+        {finalRender}
       </>
     );
   };
@@ -50,8 +89,10 @@ export const MainPage = () => {
     let finalRender = [...allProducts];
 
     if (findWord !== '') {
-      finalRender = finalRender.filter(product =>
-        product.product.toLowerCase().includes(findWord.toLowerCase())
+      finalRender = finalRender.filter(
+        product =>
+          product.product.toLowerCase().includes(findWord.toLowerCase()) ||
+          product.subbrand.toLowerCase().includes(findWord.toLowerCase())
       );
     }
 
@@ -103,15 +144,18 @@ export const MainPage = () => {
     ) {
       return (
         <>
-          {/* {topSellersAndAds()} */}
+          {/* <IndexPage/> */}
           {finalRender}
-        
         </>
       );
     }
 
     if (finalRender.length === 0) {
-      return 'Товари за такими данними не знайдені';
+      return (
+        <p className="main-page_noproducts">
+          Нажаль ми ніого не знайшли за Вашим запитом <b>{findWord}</b>
+        </p>
+      );
     }
 
     return finalRender;
@@ -125,17 +169,21 @@ export const MainPage = () => {
   // createSiteMap()
 
   return (
-    <div className="main-page">
-      <div className="filter_pc">
-        <Filter place={'mainpage'}/>
+    <>
+      {' '}
+      <p className="logo_text">
+        Доставка передплачених замовлень від 500 грн до відділення Нової Пошти -
+        БЕЗКОШТОВНА
+      </p>
+      <div className="main-page">
+        <div className="filter_pc">
+          <Filter place={'mainpage'} />
+        </div>
+
+        <div className="main-page_markup">
+          {allProducts.length > 0 ? <>{renderProducts()}</> : renderSkeleton()}
+        </div>
       </div>
-      <div className="main-page_markup">
-        {allProducts.length > 0 ? (
-          renderProducts()
-        ) : (
-         renderSkeleton()
-        )}
-      </div>
-    </div>
+    </>
   );
 };

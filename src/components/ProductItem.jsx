@@ -2,14 +2,14 @@ import { useLocation } from 'react-router-dom';
 import { Link } from './App.styled';
 import CheckCircleOutlineIcon from '@mui/icons-material/CheckCircleOutline';
 import AddShoppingCartIcon from '@mui/icons-material/AddShoppingCart';
-import { handleAddToCart } from 'redux/slices';
+import { handleAddToCart, handleFind, selectedBrands } from 'redux/slices';
 import { useDispatch, useSelector } from 'react-redux';
 import { Rating } from '@mui/material';
 import { firebaseImg } from 'config/firebase';
 
 export const ProductItem = ({ product }) => {
   const location = useLocation();
-  const dispath = useDispatch();
+  const dispatch = useDispatch();
   const basket = useSelector(store => store.basket);
   const reviews = useSelector(store => store.reviews);
   const reviewsForThisProduct = reviews?.filter(
@@ -25,6 +25,10 @@ export const ProductItem = ({ product }) => {
     }, 0) / reviewsForThisProduct?.length;
 
   
+    const onBrandClick = () => {
+      dispatch(handleFind(''))
+      dispatch(selectedBrands(product?.subbrand))
+    }
 
 
   return (
@@ -42,6 +46,8 @@ export const ProductItem = ({ product }) => {
         />
       </Link>
       <div className="card_footer-block">
+      <p onClick={onBrandClick} className='card_brand' style={{cursor:"pointer"}} >{product?.subbrand}</p>
+      {/* <p className='card_brand'>{product?.group}</p> */}
         <Link to={`/products/${product.cid}/about`} state={{ from: location }}>
           <h2 className="card_title">{product.product}</h2>
         </Link>
@@ -60,7 +66,7 @@ export const ProductItem = ({ product }) => {
               className="global-color"
               style={{ cursor: 'pointer' }}
               onClick={() => {
-                dispath(handleAddToCart(product));
+                dispatch(handleAddToCart(product));
               }}
             />
           )}

@@ -17,6 +17,13 @@
 
     @media screen and (min-width: $big-pc) {}
 
+    &_noproducts{
+        font-size: 18px;
+        // text-align: center;
+        margin: 0 auto;
+        color: #fff;
+    }
+
 
 
     &_markup {
@@ -28,6 +35,7 @@
         justify-content: center;
         gap: 10px;
         flex-wrap: wrap;
+        margin: 0 auto;
 
         @media screen and (min-width: $mobile) {
             // width: 300px;
@@ -49,6 +57,7 @@
             justify-content: unset;
         }
 
+      
 
     }
 }

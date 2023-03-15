@@ -27,7 +27,7 @@ export const App = () => {
   return (
     <div className="globalWrapper">
       <AppBar />
-      <div className="container" style={{padding: '150px 5px'}}>
+      <div className="container" style={{padding: '115px 5px'}}>
         <Routes>
           <Route path="/" element={<MainPage />} />
           <Route path="auth" element={<Auth />} />

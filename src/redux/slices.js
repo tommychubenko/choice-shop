@@ -36,7 +36,7 @@ export const allProducts = createSlice({
     name: 'Find',
     initialState: [],
     reducers: {
-      handleFind(state, action) {
+      handleFind(state, action) {       
         return action.payload;
       },
     },
@@ -46,6 +46,11 @@ export const allProducts = createSlice({
     name: 'Filter',
     initialState: { brands: "", groups: "", minprice: 0, maxprice: 0, program: "", usage: ''   },
     reducers: {
+
+      resetAllFilters(state, action){
+       return state = { brands: "", groups: "", minprice: 0, maxprice: 0, program: "", usage: ''   }
+      },
+
       selectedPrograms(state, action){    
         filterByProgram(state, action)
       },
@@ -97,5 +102,5 @@ export const {setUserData} = user.actions
 export const {setAllReviews} = reviews.actions
 export const { setAllProductsToState} = allProducts.actions;
 export const { handleFind } = find.actions;
-export const { selectedBrands, selectedGroups, handleSetMinPrice, handleSetMaxPrice, selectedPrograms, selectedUsage } = filter.actions;
+export const { selectedBrands, selectedGroups, handleSetMinPrice, handleSetMaxPrice, selectedPrograms, selectedUsage, resetAllFilters } = filter.actions;
 export const { handleAddToCart, handleIncrement, handleDecrement,handleDelete, deleteAll, handleAddAllToBasket } = basket.actions;

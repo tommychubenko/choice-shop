@@ -96,10 +96,10 @@ div {
 }
 
 .appbar {
-  width: 100vw;
+  width: 100%;
   top: 0;
   left: 0;
-  padding: 5px;
+  padding: 5px 5px 15px 5px;
   background: #264d32;
   background: linear-gradient(0deg, rgb(38, 77, 50) 0%, rgb(19, 50, 29) 90%);
   position: fixed;
@@ -133,7 +133,7 @@ div {
 }
 @media screen and (min-width: 767.98px) {
   .logo_text {
-    font-size: 11px;
+    font-size: 10px;
   }
 }
 @media screen and (min-width: 1249.98px) {
@@ -296,6 +296,11 @@ div {
     width: 100%;
   }
 }
+.main-page_noproducts {
+  font-size: 18px;
+  margin: 0 auto;
+  color: #fff;
+}
 .main-page_markup {
   display: flex;
   width: 100%;
@@ -303,6 +308,7 @@ div {
   justify-content: center;
   gap: 10px;
   flex-wrap: wrap;
+  margin: 0 auto;
 }
 @media screen and (min-width: 1249.98px) {
   .main-page_markup {
@@ -366,6 +372,9 @@ div {
 .card:hover {
   transform: scale(1.01);
 }
+.card_brand {
+  color: #264d32;
+}
 .card_title {
   font-size: 16px;
   font-weight: 500;
@@ -394,17 +403,40 @@ div {
 
 .productCard {
   display: flex;
-  flex-basis: 100%;
+  width: 90%;
   flex-direction: column;
   align-items: flex-start;
   background-color: #FFFFFF;
   padding: 20px;
   border-radius: 5px;
+  margin: 0 auto;
+}
+@media screen and (min-width: 1249.98px) {
+  .productCard {
+    width: 100%;
+  }
+}
+.productCard_breadcrumbs {
+  cursor: pointer;
+  color: #264d32;
+  font-weight: 400;
+  font-size: 12px;
+}
+@media screen and (min-width: 767.98px) {
+  .productCard_breadcrumbs {
+    font-size: unset;
+  }
+}
+.productCard_breadcrumbs-wrapper {
+  display: flex;
+  align-items: center;
+  margin-bottom: 15px;
+  margin-top: 15px;
+  gap: 10px;
 }
 .productCard_title {
   font-size: 20px;
   color: #264d32;
-  margin-top: 25px;
   margin-bottom: 25px;
 }
 @media screen and (min-width: 767.98px) {
@@ -599,16 +631,45 @@ div {
     display: flex;
   }
 }
+.find_mobile {
+  display: flex;
+  align-items: center;
+  gap: 5px;
+}
+@media screen and (min-width: 767.98px) {
+  .find_mobile {
+    display: none;
+  }
+}
+@media screen and (min-width: 767.98px) {
+  .find_close {
+    display: none;
+  }
+}
 .find_wrapper {
   position: relative;
 }
 .find_input {
-  width: 350px;
-  height: 30px;
+  width: 300px;
+  height: 40px;
   padding: 0 15px;
   font-weight: 500;
   outline: 0;
   border-radius: 5px;
+  font-size: 18px;
+}
+.find_input::placeholder {
+  font-size: 14px;
+}
+@media screen and (min-width: 767.98px) {
+  .find_input {
+    width: 400px;
+  }
+}
+@media screen and (min-width: 1249.98px) {
+  .find_input {
+    width: 600px;
+  }
 }
 .find_result {
   width: 100%;
@@ -1394,6 +1455,20 @@ div {
   .discount_freeDelivery {
     width: 920px;
   }
+}
+
+.ad_brand-wrapper {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  width: 100%;
+}
+.ad_brand-greenmax {
+  width: 300px;
+  height: 300px;
+  background-color: #fff;
+  border-radius: 5px;
+  overflow: hidden;
 }
 
 .footer {

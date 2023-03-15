@@ -1,0 +1,30 @@
+.ad{
+    &_brand{
+
+        &-wrapper {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+            width: 100%;
+        }
+
+        &-greenmax {
+            width: 300px;
+            height: 300px;
+            background-color: #fff;
+            border-radius: 5px;
+            overflow: hidden;
+        }
+    }
+}
+
+// .hero {
+//     // width: 1000px;
+//     width: 100%;
+//     height: 500px;
+//     background-image: url('https://firebasestorage.googleapis.com/v0/b/choice-ab93a.appspot.com/o/bg-01.jpg?alt=media&token=349f5319-2d88-41a2-ba65-91e23eed95e5');
+//     background-repeat: no-repeat;
+//     // background-size: contain;
+//     background-size: cover;
+//     background-position: top left;
+// }

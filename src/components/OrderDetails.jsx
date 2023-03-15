@@ -303,7 +303,8 @@ export const OrderDetails = ({ back }) => {
                   Ваш номер телефону
                 </label>
                 <input
-                  type="number"
+                  type="tel"
+                  pattern="\+?\d{1,4}?[-.\s]?\(?\d{1,3}?\)?[-.\s]?\d{1,4}[-.\s]?\d{1,4}[-.\s]?\d{1,9}"
                   className="order_client-data-input"
                   id="tel"
                   placeholder="+380..."

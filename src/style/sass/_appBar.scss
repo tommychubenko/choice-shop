@@ -1,9 +1,10 @@
 .appbar { 
     // height: 120px;
-    width: 100vw;
+    // width: 100vw;
+    width: 100%;
     top: 0;
     left: 0;
-    padding: 5px;
+    padding: 5px 5px 15px 5px;
     background: $main-color;
     background: linear-gradient(0deg, rgba(38,77,50,1) 0%, rgba(19,50,29,1) 90%);
     position: fixed;
@@ -13,13 +14,11 @@
     align-items: center;
     justify-content: center;
     z-index: 100;
+
   
    
 
-    // @media screen and (min-width: $big-pc){
-    //     padding: 0 45px;
-    // }
-
+ 
     &_menu{
         display: flex;
         align-items: center;
@@ -41,7 +40,7 @@
         text-align: center;
         margin-bottom: 10px;
         @media screen and (min-width: $tablet) {     
-            font-size: 11px;  
+            font-size: 10px;  
         }
     
         @media screen and (min-width: $pc) {
