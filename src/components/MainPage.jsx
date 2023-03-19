@@ -181,7 +181,7 @@ export const MainPage = () => {
         </div>
 
         <div className="main-page_markup">
-          {allProducts.length > 0 ? <>{renderProducts()}</> : renderSkeleton()}
+          {allProducts.length > 0 ? renderProducts() : renderSkeleton()}
         </div>
       </div>
     </>

@@ -43,6 +43,8 @@ export const AppBar = () => {
     return () => observer;
   }, [dispatch]);
 
+  // console.log(auth.currentUser)
+
   useEffect(() => {
     try {
       localStorage
